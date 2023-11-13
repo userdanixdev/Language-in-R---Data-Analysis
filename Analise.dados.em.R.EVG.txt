@@ -1,0 +1,726 @@
+Análise de dados em R no âmbito público:
+	- Diversas áreas governamentais de vários países estão se beneficiando com a análise de dados.
+Saúde: Centro de controle e prevenção de doenças utilizam os dados para prever surtos de gripe e rastrear padrões da doença.
+Detecção e prevenção de crimes:
+	- O Departamento de Polícia de Durham, no estado da Carolina do Norte(EUA), analisa dados para identificar padrões de atividades 
+criminosas e lugares com alta incidência de criminalidade. Ajudando o departamento a decidir onde os policiais devem ser alocados.
+	- SEGURANÇA DA INFORMAÇÃO:
+		- Nos EUA, o Departamento de Segurança Interna analisa os dados de tráfego da internet para detectar ameaças e acessos não
+autorizados.
+	- DESASTRES NATURAIS:
+		- Na Indonésia, a partir de dados históricos coletados por sensores e dados de reclamações dos cidadãos, foi possível identificar
+áreas propensas a inundações.
+	Análise de dados no BRASIL:
+		- Para localização de vítimas do rompimento da barragem de BRUMADINHO
+		- Análise de vínculos para detecção de fraudes. ( Tribunal de contas do Estado de SP )
+		- Fiscalização contínua de folhas de pagamento da Administração Pública ( TCU )
+
+DADOS ABERTOS:
+	- O que são dados abertos? Diversos países disponibilizam na internet bases de dados governamentais classificadas como dados abertos.
+Dados abertos são quando qualquer pessoa pode livremente acessá-los, utilizá-los, modificá-los e compartilhá-los para qualquer finalidade.
+Estando sujeito,no máximo, as exigências que visem preservar sua proveniência e sua abertura.
+
+BIG DATA:
+	- Definições de BIG DATA:
+		- Uma enorme quantidade de dados digitais coletados a partir de todos os tipos de fontes. (Kim,Trimi e Ji-Hyong - 2014)
+		- Denotam um maior conjunto de dados ao longo do tempo, conjuntos de dados estes que são grandes demais para serem manipulados por
+infraestruturas de armazenamento e processamento regulares.(Mahrt e Scharkow - 2013)
+		- Dados demasiadamente volumosos ou muito desestruturados para serem gerenciados e analisados através de meios tradicionais(Davenport - 2012-Kwon-2014)
+		- Refere-se ao conjunto de dados cujo tamanho está além da habilidade de ferramentas típicas de BD em capturar, gerenciar e analisar.(DI MARTINO)
+		- São conjuntos de dados que são tão grandes que se tornam difíceis de trabalhar com o uso de ferramentas atualmente disponíveis.(RAJESH-2013)
+
+O conceito de BIG DATA pode ser também caracterizado por quatro pilares ( VOLUME, VARIEDADE,VELOCIDADE, VERACIDADE ):
+	- Volume: Refere-se à grande quantidade de dados.
+	- Variedade: Refere-se a diversas fontes e diferentes formatos de onde surgem os dados, por exemplo, informação como imagem, vídeos,textos.
+	- Velocidade: Refere-se à velocidade que os dados são gerados, armazenados e recuperados.
+	- Veracidade: Refere-se à qualidade, volatilidade e validade de dados.
+
+Estima-se que serão produzidos 175 zettabytes de dados no mundo. De acordo com o IDC( International Data Corporation )
+
+O TERMO BIG DATA ENTÃO REFERE-SE A UMA GRANDE QUANTIDADE DE DADOS QUE EXCEDE A CAPACIDADE DE PROCESSAMENTO DE UM BANCO DE DADOS TRADICIONAL. DEVIDO A ISSO
+TORNA-SE NECESSÁRIA A UTILIZAÇÃO DE ARQUITETURAS PARALELAS E DISTRIBUÍDAS PARA ARMAZENAR E PROCESSAR ESSES GRANDES CONJUNTOS DE DADOS. UMA DAS TECNOLOGIAS
+QUE SUPORTAM O 'BIG DATA' É O 'HADOOP'.
+
+O QUE É HADOOP?
+	- O Apache Hadoop é um framework 'open source' - estrutura de código aberto- para processamento de grandes volumes de dados (big data).
+Pode ser definido como um ecossistema de ferramentas e métodos para armazenamento, distribuição e análise de dados estruturados e não estruturados.
+
+DADOS ESTRUTURADOS X NÃO-ESTRUTURADOS:
+	- Os dados estruturados são organizados em tabelas (linhas e colunas). Os não estruturados não seguem um padrão de organização.
+	- A estrutura de dados estruturados são rígidas e previamente planejada. Os não estruturados possuem uma estrutura flexível e dinâmica.
+	- Exemplos de dados estruturados são definidos por esquemas como tabelas com seus respectivos campos (atributos) e tipos (formato). Já os
+não estruturados podem vir como documentos, imagens, vídeos, áudios, redes sociais e dados que estão na web.
+OBS: ESTIMA-SE QUE 80% A 90% DOS DADOS DO MUNDO NÃO SÃO ESTRUTURADOS.
+
+DATA SCIENCE, O QUE É?
+	- Data Science ou Ciência de dados é a arte de extrair conhecimento por meio dos dados para se tomar melhores decisões, realizar previsões e entender
+o passado. Ela é responsável em transformar dados em informação.
+	- áreas como matemática, estatística predominam.
+
+obs: ** UMA DAS MAIORES TENDÊNCIAS DA MODERNIDADE TECNOLÓGICA É A MACHINE LEARNING OU APRENDIZAGEM DE MÁQUINA.***
+
+	Segundo um artigo da Data Science Academy (2018) a aprendizagem de máquina é um subconjunto da inteligência artificial.(IA), ou seja, concentra na
+criação de computadores que pensam da mesma maneira que os humanos, assim como seu comportamento.
+
+Outros exemplos de aplicação de ML ( Machine Leaning ):
+	- Detecção de anomalias e fraudes.
+	- Identificação de mensagens spam em e-mails.
+	- Segmentação de clientes.
+	- Carros e drones autônomos.
+	- Mecanismos de busca
+	- Segurança de tecnologia da informação.
+	- Logística.
+
+TIPOS DE APRENDIZAGEM DE Máquina:
+	-  SUPERVISIONADA:
+		- O algoritmo procura associações entre os atributos ( variáveis preditoras ) e a variável resposta ( variável que se quer prever ) de um
+'dataset'. A partir dessas associações supervisionadas é possível realizar previsões quando o algoritmo for apresentado a novos dados.
+Exemplo: Com base nos dados históricos de pacientes, podemos prever se um novo paciente irá desenvolver ou não uma doença.
+
+	- NÃO SUPERVISIONADA:
+		- O objetivo é agrupar dados com base em caracaterísticas similares, não sendo necessário apresentar o algoritmo à variável resposta.
+	Exemplo: Pode ser utilizada para identificar anomalias ou agrupar clientes com base em comportamento similares.
+	
+	- APRENDIZAGEM POR REFORÇO:
+		- O algoritmo aprende com base nas interações com o ambiente. Exemplo: Carros autônomos.
+
+PROCESSO DE DATA SCIENCE:
+	1. Definição do problema
+	2. Preparação dos dados
+	3. Análise exploratória dos dados
+	4. Construção do modelo preditivo
+	5. Visualização dos resultados.
+
+BONUS: STORYTELLING DE DADOS.
+	- Técnica crucial para um Cientista ou Analista de dados que precisa explicar sua linha de pensamento para outras pessoas. Data Storytelling é o 
+ato de você explicar o que você fez, como fez e por que fez, tudo isso de forma que mantenha seu leitor ou ouvinte engajado.
+
+LINGUAGEM EM R:
+	- Usada para análise estatística e produção de gráficos. Trata-se de uma programação funcional, dinâmica, fracamente tipada voltada para manipulação,
+análise e visualização de dados.
+	- Com ela é possível preparar e explorar dados, construir modelos preditivos e apresentar os resultados por meio de gráficos e dashboards.
+	- Possui diversos pacotes para REGRESSÃO LINEAR, ANÁLISE DE SÉRIES TEMPORAIS, CLASSIFICAÇÃO, ENTRE OUTRAS.
+	- Grande vantagem da linguagem é que atualmente mais de 15 mil pacotes estão disponíveis no CRAN ( Comprehensive R archive Network ) e que podem
+ser acessados gratuitamente no endereço: cran.r-project.org
+
+RSTUDIO:
+	Para atribuir uma variável em R:
+		- mensagem <- "Hello World"
+	Para imprimir o valor da variável no console:
+		- print(mensagem)
+
+Para acessar uma documentação de uma função é necessário adicionar o caractere de interrogação (?) na frente do nome da função.
+O resultado irá aparecer na aba HELP, no canto inferior esquerdo do RSTUDIO.
+Outras funções úteis:
+		- ?head
+		- ?str
+		- ?getwd
+		- ?mean
+		- ?sd
+		- ?sum
+		- ?seq
+
+Para instalar pacotes:
+	- install.packages("nome_pacote")
+Para carregar o pacote:
+	- library(nome_pacote)  obs: sem aspas
+
+Estrutura de dados:
+	- Vetor: Armazena um conjunto de valores ordenados chamados de elementos. Todos os elementos de um vetor devem ser do mesmo tipo.
+	- Fator: Armazena valores categóricos (nominal ou ordinal).
+	- Lista: É um tipo especial de vetor, sendo possível adicionar elementos de tipos diferentes.
+	- Data frame: É utilizado para organizar elementos em linhas e colunas, semelhante a uma planilha. Pode ser formado a partir de listas e vetores.
+	- Matriz: Armazena dados tabulares semelhante ao data frame, porém só aceita um tipo de dado.
+
+VETORES: 
+	É necessário chamar a função c():
+# Vetores
+cidade <- c("Brasília",
+            "São Paulo",
+            "Rio de Janeiro",
+            "Porto Alegre")
+
+Obs: Os elementos separados por vírgulas e entre aspas duplas para strings.
+
+Vetores com valores numéricos:
+	- temperatura <- c(32,22,35,17)
+	- regiao <- c(1,2,2,3)
+
+# Acessando qualquer elemento do vetor:
+cidade[1] # Irá mostrar na tela a cidade de 'Brasilia' entre colchetes.
+# Para acessar intervalos de elementos de vetores:
+cidade[2:5]  <- Separar pelo elemento dois pontos ':'
+Resultado: [1] "São Paulo"      "Rio de Janeiro" "Porto Alegre"   "Goiás"
+	
+Para copiar um vetor basta atribui-lo á uma variável com nome diferente:
+cidade2 <- cidade
+> cidade2
+[1] "Brasília"       "São Paulo"      "Rio de Janeiro" "Porto Alegre"  
+[5] "Goiás"          "Amapá"          "Roraima"        "Amazonas"   
+
+# Excluir elemento de um vetor:
+temperatura2 [-2]
+temperatura2 [-2]
+[1] 30 40 17 33 34 31 35
+> temperatura2
+[1] 30 35 40 17 33 34 31 35
+
+# Alterando um vetor:
+cidade2[5] <- "Belo Horizonte"
+cidade2
+cidade2
+[1] "Brasília"       "São Paulo"      "Rio de Janeiro" "Porto Alegre"  
+[5] "Belo Horizonte" "Amapá"          "Roraima"        "Amazonas"   
+
+#Adicionar um novo elemento:
+cidade2[9]<- "goiás"
+# Deletar todos os elementos do vetor e deixa-lo NULO:
+cidade2 <- NULL   
+
+FATORES:
+A chamada da função de fatores é: factor()
+é necessário criar uma variável, inerente ao contexto, para usar a função.
+Variável UF ( Unidade Federativa ) Sendo assim:
+
+UF <- factor(c("DF","SP","RJ","RS"))
+As métricas ou categorias do fator aparecerão na tela ( console ) inclusive no enviroment, que no caso são 4 levels.
+[1] DF SP RJ RS
+Levels: DF RJ RS SP
+Para ordenar os fatores é necessário acionar dois parâmetros:
+	- levels
+	- ordered
+Obs: é importante listar em ordem CRESCENTE:
+
+grau.instrucao <- factor(c("Nível Médio,"Superior","Fundamental"),
+			levels = c("Fundamental","Nível Médio","Nível Superior"),
+			ordered = TRUE)
+
+# Listas:
+list()
+pessoa # variável
+pessoa <- list(sexo = "M", cidade = "Brasília", idade = 20)
+$sexo
+[1] "M"
+
+$cidade
+[1] "Brasília"
+
+# Acessando algum elemento da lista:
+> pessoa[3]
+$idade
+[1] 20
+Obs:  MOSTRA NO CONSOLE O ELEMENTO( atributo ) E O VALOR.
+
+
+
+# Abaixo, com colchetes entre colchetes nos mostra somente o valor do elemento:
+pessoa[[3]]
+Resultado no console:
+pessoa[[3]]
+[1] 20
+
+$idade
+[1] 20
+
+
+Editar um novo valor de um elemento da lista:
+Sendo necessário atribuir um novo valor ao atributo.
+
+pessoa[["idade"]] <- 22
+
+Digitando a sintaxe para deletar elemento da lista:
+pessoa[["idade"]] <- NULL
+
+Filtrando listas:
+é necessário chamar a função 'c' como vetor ( ponteiro ) com os índices desejados.
+pessoa[c("cidade","idade")] com os filtros entre parênteses.
+
+Uma lista aceita diferentes tipos de dados. Nesse caso foi elaborado uma lista com os vetores criados anteriormente.
+sendo assim:
+
+cidades <- list(cidade =  cidade,
+		temperatura = temperatura,
+		regiao = regiao)
+
+FUNÇÕES DATAFRAME:
+# Criando um data frame com vetores já criados anteriormente:
+Obs: Utilizando a função data.frame(), as variáveis criadas são utilizadas como parâmetros.
+
+df <- data.frame(cidade,temperatura)
+df
+Resultado no console:
+
+df <- data.frame(cidade,temperatura)
+> df
+          cidade temperatura
+1       Brasília          30
+2      São Paulo          35
+3 Rio de Janeiro          40
+4   Porto Alegre          17
+5          Goiás          33
+6          Amapá          34
+7        Roraima          31
+8       Amazonas          35
+
+# Criando dataframe com a lista criada anteriormente:
+df2 <- data.frame(cidades)
+df2
+
+Resultado:
+
+cidade temperatura regiao
+1       Brasília          30      1
+2      São Paulo          35      2
+3 Rio de Janeiro          40      2
+4   Porto Alegre          17      3
+5          Goiás          33      1
+6          Amapá          34      4
+7        Roraima          31      5
+8       Amazonas          35      4
+
+# Filtrando valores do data frame ou seja, recuperando o valor da linha desejada e da coluna desejada, assim:
+df[1,2]   # chama o data frame e entre colchetes a linha, depois a vírgula ',' e digite o número da coluna antes de fechar colchetes.
+
+Resultado:
+ # FIltrando o valor da linha e coluna de um data frame:
+> df[1,2]
+[1] 30
+> # FIltrando o valor da linha e coluna de um data frame:
+> df[1,1]
+[1] "Brasília"
+
+# Filtrando todas as linhas da primeira ou de uma determinada coluna de um data frame:
+df[,1]
+df[,2]
+Resultados das duas chamadas:
+> df[,1]
+[1] "Brasília"       "São Paulo"      "Rio de Janeiro" "Porto Alegre"  
+[5] "Goiás"          "Amapá"          "Roraima"        "Amazonas"      
+> df[,2]
+[1] 30 35 40 17 33 34 31 35
+
+# Retornar as linhas da coluna desejada:
+df[1,]
+df[2,]
+
+Resultados:
+df[1,]
+    cidade temperatura
+1 Brasília          30
+> df[2,]
+     cidade temperatura
+2 São Paulo          35
+
+# Filtrando data frame com intervalos de valores:
+# Nesse caso, selecionar as 3 primeiras linhas da primeira e última coluna.
+df2[c(1:3),c(1:3)]
+
+Para verificar o nome das colunas:
+names(nome_data_frame)
+Para verificar o número de linhas X colunas:
+dim(nome_data_frame)
+dim(df)
+Para verificar os tipos de dados contidos no data frame:
+str(nome_data_frame)
+str(df)
+Para acessar uma coluna do dataframe:
+df$cidade   # Mostrará os dados da coluna em linhas
+Se for acessar por colchetes:
+df['cidade']  # Buscará por colunas.
+Resultados das sintaxes:
+
+df['temperatura']
+  temperatura
+1          30
+2          35
+3          40
+4          17
+5          33
+6          34
+7          31
+8          35
+> df$temperatura
+[1] 30 35 40 17 33 34 31 35
+
+MATRIZES:
+
+Lembrando que MATRIX só aceita dados tabulares, semelhante ao data frame, porém, somente com o mesmo tipo de dados.
+Matrix utiliza parâmetros.
+#Matrizes
+m <- matrix(seq(1:9)   # 'seq' siginifica sequência de valores de 1 a 9.
+			# nrow = 3   # number of row ( número de linhas distribuídas )
+m <- matrix(seq(1:9), nrow = 3)
+
+SEGUE O RESULTADO ABAIXO, DADO PELO CONSOLE:
+> m
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+> m2 <- matrix(seq(1:25), nrow = 5)
+> m2
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    6   11   16   21
+[2,]    2    7   12   17   22
+[3,]    3    8   13   18   23
+[4,]    4    9   14   19   24
+[5,]    5   10   15   20   25
+
+# Especificar a quantidade colunas na matriz:
+
+m3 <- matrix(seq(1:25),
+		ncol = 5,  # Para determinar que a matriz terá 5 colunas.
+		byrow = TRUE,   # Determina que a matriz será preenchida por linhas.
+		dimnames = list(c(seq(1:5)),
+				c('A','B','C','D','E')))  # Especifica os nomes das colunas da matriz
+
+Resultado:
+m3
+   A  B  C  D  E
+1  1  2  3  4  5
+2  6  7  8  9 10
+3 11 12 13 14 15
+4 16 17 18 19 20
+5 21 22 23 24 25
+
+# Filtragem de matriz:
+
+m3[c(1:2), c("B","C")]
+     ^	        ^
+    Filtra    Filtra 
+      as        as
+    linhas    colunas
+
+Resultado:
+m3[c(2:5), c("B","C")]
+   B  C
+2  7  8
+3 12 13
+4 17 18
+5 22 23
+
+Estruturas de repetição:
+For() - Utilizada para acessar cada elemento de uma sequência( seja VETOR, COLUNA de MATRIZ ou DATA FRAME.
+Sintaxe básica: 'for ( 'valor' IN 'sequencia'){código}
+Exemplo:
+for (i IN seq(12)){
+print(i)
+}
+Resultado no console:
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+[1] 11
+[1] 12
+
+while() - Utilizada para repetir uma operação por um determinado número de vezes.
+Sendo necessário um contador
+Sintaxe:
+i <- 0
+while (i <= 10){
+print(i)
+i = i + 1
+}
+Resultado:
+[1] 0
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+
+Funções relacionadas a UNIÃO, SELEÇÃO E TRANSFORMAÇÃO DE DADOS EM LINGUAGEM R.
+	É permitido unir dois conjuntos de dados em um único lugar.  os 'joins'
+
+# Join:
+df1 <- data.frame(Produto = c(1,2,3,5), Preco = c(15,10,25,20))
+head(df1)
+Resultado no console:
+ Produto Preco
+       1    15
+       2    10
+       3    25
+       5    20
+
+df2 <- data.frame(Produto = c(1,2,3,4), Nome = c("A","B","C","D"))
+head(df2)
+Produto Nome
+       1    A
+       2    B
+       3    C
+       4    D
+
+União dos dados das duas tabelas:
+df3 <- left_join(df1,df2,"Produto")
+head(df3)
+# Irá unir os dados de duas tabelas com base em alguma coluna, no caso 'produto.' O left join mantém os dados da tabela da esquerda e caso não encontre
+nenhum valor correspondente da direita, é atribuido o valor '<NA>'.
+Resultado no console:
+
+df3 <- left_join(df1,df2,"Produto")
+> head(df3)
+  Produto Preco Nome
+       1    15    A
+       2    10    B
+       3    25    C
+       5    20 <NA>
+
+
+df4 <- right_join(df1,df2,"Produto")
+head(df4)
+
+df4 <- right_join(df1,df2,"Produto")
+> head(df4)
+  Produto Preco Nome
+       1    15    A
+       2    10    B
+       3    25    C
+       4    NA    D
+
+INNER JOIN:
+# Unir os valores que aparecem nas duas tabelas:
+
+df5 <- inner_join(df1,df2,"Produto")
+head(df5)
+
+Resultado no console:
+Produto Preco Nome
+       1    15    A
+       2    10    B
+       3    25    C
+
+
+# Full Join:
+# Une todos os valores das duas tabelas não correspondentes.
+df6 <- full_join(df1,df2,"Produto")
+> head(df6)
+Resultado console:
+  Produto Preco Nome
+       1    15    A
+       2    10    B
+       3    25    C
+       5    20 <NA>
+       4    NA    D
+
+Pacote dplyr - Pacote que permite selecionar e manipular dataframes.
+
+dataset 'iris' - Conjunto de dados que vem por padrão na linguagem R
+o dataset iris possui medidas, em centimetros, da pétala e da sépala de uma flor.
+Classifica-se essas flores em SETOSA, VIRGINICA e VERSICOLOR.
+
+head(iris)
+Resultado no console:
+
+Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+          5.1         3.5          1.4         0.2  setosa
+          4.9         3.0          1.4         0.2  setosa
+          4.7         3.2          1.3         0.2  setosa
+          4.6         3.1          1.5         0.2  setosa
+          5.0         3.6          1.4         0.2  setosa
+          5.4         3.9          1.7         0.4  setosa
+
+Para obter mais informações sobre o dataset como variáveis, tipo e valores das colunas,
+é necessário a função 'glimpse()' pertencente ao pacote 'dplyr'.
+
+glimpse(iris)
+Resultado no console:
+
+ glimpse(iris)
+Rows: 150
+Columns: 5
+$ Sepal.Length <dbl> 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.8, 4.8,…
+$ Sepal.Width  <dbl> 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3.0,…
+$ Petal.Length <dbl> 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.6, 1.4,…
+$ Petal.Width  <dbl> 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1,…
+$ Species      <fct> setosa, setosa, setosa, setosa, setosa, setosa, setosa, setosa, …
+
+# Filtrar os dados:
+# NEsse caso somente 'versicolor' espécie
+
+versicolor <- filter(iris, Species == "versicolor")  # coluna: 'species'
+
+dim(versicolor)  # função 'dim' para retornar a quantidade de linas e colunas.
+O resultado no console pela função 'dim' é somente 50 linhas em 5 colunas.
+COm a função 'head' nos informa a tabela completa da espécie 'versicolo', abaixo:
+head(versicolor)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+1          7.0         3.2          4.7         1.4 versicolor
+2          6.4         3.2          4.5         1.5 versicolor
+3          6.9         3.1          4.9         1.5 versicolor
+4          5.5         2.3          4.0         1.3 versicolor
+5          6.5         2.8          4.6         1.5 versicolor
+6          5.7         2.8          4.5         1.3 versicolor
+
+Assim também podemos filtrar de outras espécies dentro do dataset:
+ virginica <- filter(iris,Species == "virginica")
+> dim(virginica)
+[1] 50  5
+> head(virginica)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+          6.3         3.3          6.0         2.5 virginica
+          5.8         2.7          5.1         1.9 virginica
+          7.1         3.0          5.9         2.1 virginica
+          6.3         2.9          5.6         1.8 virginica
+          6.5         3.0          5.8         2.2 virginica
+          7.6         3.0          6.6         2.1 virginica
+
+# SLICE: seleciona algumas linhas especificas:
+slice(iris,5:10)
+
+A função 'SELECT' seleciona colunas:
+select(virginica,2:4)
+
+#Selecionar todas as colunas exceto uma:
+select(virginica, -Species)
+
+Combinar valores de uma ou mais colunas com a função mutate()
+** Tipo somar **
+Para isso é necessária criar uma nova coluna com base nas colunas existentes:
+iris2 <- mutate(versicolor, soma_length_width = Sepal.length + Sepal.width)
+Para mostrar na tela:
+iris2[,c("Sepal.Length","Sepal.Width","soma_sepal_length_width")]
+		OU
+print(iris2)  # tabela completa, com a função 'mutate'
+		OU
+head(iris2)  # Para ter somente a parte de cima da tabela
+
+A função 'arrange()' permite ordernar os dados de um data frame assim como as COLUNAS A SEREM ORDENADAS:
+# Para isso, é necessário o parâmetro 'select' e entre parênteses as colunas a serem ordenadas:
+select(iris2, soma_sepal_sength_width, sepal.length, sepal.width)  '%>%'  # Habilita realizar mais de uma operação 
+arrange()
+
+GROUP BY:
+	iris %>% group_by(Species) %>%
+		summarise(mean(Sepal.Length))   # 'mean' parâmetro para cálculo da média
+						# função summarise obrigatória ou outra fução para GROUP BY
+
+Resultado no console:
+ A tibble: 3 × 2
+  Species    `mean(Sepal.Length)`
+  <fct>                     <dbl>
+ setosa                     5.01
+ versicolor                 5.94
+ virginica                  6.59
+
+iris %>% group_by(Species) %>%
+	summarise(mean(Sepal.Width))
+
+Resultado no console:
+
+Species    `mean(Sepal.Width)`
+  <fct>                    <dbl>
+ setosa                    3.43
+ versicolor                2.77
+ virginica                 2.97
+
+TRANSFORMANDO DADOS:
+	- Outro pacote importante na estrutura de dados é o 'tidyr', assim como o 'dplyr'.
+install.packages("tidyr") # Para instalar o pacote necessário
+library(tidyr)  # Carregar o pacote para poder usá-lo
+
+Primeiro passo é criar um data frame de vendas de produtos por ano.
+df.date <- data.frame(Produto = c('A','B','C'),
+			A.2015 = c(10,12,20),
+			B.2016 = c(20,25,35),
+			C.2017 = c(15,20,30))
+
+Na tela deverá ficar assim:
+head(dfDate)
+  Produto A.2015 A.2016 A.2017
+       A     10     20     15
+       B     12     25     20
+       C     20     35     30
+
+Devido a esse pacote, poderemos mudar o formato do data.frame:
+	# Transformar colunas em linhas usando a função 'gather()'
+# para isso devemos declarar outra variável para o dataframe:
+	dfDate2 <- gather(dfDate, "Ano", "Quantidade", 2:4)
+Resultado no console:
+head(dfDate2)
+  Produto    Ano Quantidade
+       A A.2015         10
+       B A.2015         12
+       C A.2015         20
+       A A.2016         20
+       B A.2016         25
+       C A.2016         35
+
+Porém, a coluna ano e seus dados, as linhas, estão se repetindo...
+Para isso temos a função 'separate()'. Essa função separa um texto com base em uma condição.
+Devemos declarar outra variável para o dataframe: 'df.Date3'
+Logo devemos nomear o nome das novas colunas que irão receber o resultado da separação.
+
+df.Date3 <- separate(dfDate2, Ano, c('A','Ano'))
+
+Sendo o resultado no console:
+df.Date3 <- separate(dfDate2, Ano, c('A','Ano'))
+> head(df.Date3)
+ Produto A  Ano Quantidade
+       A A 2015         10
+       B A 2015         12
+       C A 2015         20
+       A A 2016         20
+       B A 2016         25
+       C A 2016         35
+
+Para deletar a coluna 'A' que não serve para nada:
+
+df.Date3 <- df.Date3[-2] # A segunda coluna é a 'A'.
+Sendo assim:
+
+Produto  Ano Quantidade
+       A 2015         10
+       B 2015         12
+       C 2015         20
+       A 2016         20
+       B 2016         25
+       C 2016         35
+
+OUTRA FUNÇÃO PARA TRANSFORMAR DADOS:
+	# Acrescentando uma coluna 'Mês':
+df.Date3$Mês <- c('01','02','03')   # E acrescentar os valores para a coluna juntamente com o parâmetro c
+O resultado ficará:
+df.Date3$Mês <- c('01','02','03')
+> head(df.Date3)
+  Produto  Ano Quantidade Mês
+       A 2015         10  01
+       B 2015         12  02
+       C 2015         20  03
+       A 2016         20  01
+       B 2016         25  02
+       C 2016         35  03
+
+FUNÇÃO 'UNITE()' é possível juntar os dados de diferentes colunas:
+Nesse caso é necessário declarar um novo data.frame baseado no anterior, logo criar o nova coluna 'Data' e as colunas que desejamos unir:
+df.Date4 <- df.Date3 %>%
+	unite(Data,Mês,Ano,sep='/')   # 'sep' é o parâmetro que irá separar o mês do ano.
+Sendo assim, no console:
+Produto    Data Quantidade
+       A 01/2015         10
+       B 02/2015         12
+       C 03/2015         20
+       A 01/2016         20
+       B 02/2016         25
+       C 03/2016         35
+
+
+
+
+
+
+
+
+
+Mansões Pôr do sol - Quadra B25 - Lote 08 - Fração C - Águas Lindas de Goiás
