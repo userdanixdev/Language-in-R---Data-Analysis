@@ -1,0 +1,64 @@
+REVISÃO DOS EXERCÍCIOS:
+	a)A linguagem em R é um software livre de ambiente de desenvolvimento integrado para RStudio.[errado]
+		* Este é um conceito do Rstudio e não da linguagem. ***
+	b)A linguagem R é uma linguagem de programação usada para análise estatística e produção de gráficos.
+	Uma de suas vantagens é a linguagem acessível, fator que facilita a sua usabilidade.[CORRETO]
+	c)O RStudio é dividido em três janelas: 'Source','Console','Enviroment'[ERRADO]
+	´[É dividido em quatro janelas: 'source','console','enviroment' e 'visualization']
+	d)Ao executar o arquivo de instalação da linguagem R, não é permitido ao usuário escolher o idioma do instalador.[ERRADO]
+		[Depois de executar o arquivo de instalação, o usuário deve selecionar o idioma do instalador na aixa de diálogo exibida,
+				e em seguida, clicar 'ok'.]
+
+Sobre os RStudio:
+	a)- A aba 'Files' exibe os gráficos do RStudio. [ERRADO]
+		[A aba 'Plots' é a área que exibe os gráficos do programa RStudio.]
+	b)- A aba 'Plots' exibe a documentação de uma determinada função ou pacote quando a função 'help()' é exeutada.[ERRADO]
+		[A aba que exibe a documentação de uma determinada função ou pack é a função 'help()']
+	c)- A aba 'Packages' é o local onde os gráficos gerados serão exibidos.[ERRADO]
+		[Packages é aba onde possuem todos os pacotes prontos para serem utilizados. Os gráficos são exibidos na ana 'Plots'.]
+	d) A única janela que exibe os objetos é a "Environment".[CORRETO]
+		[Exibem objetos que estão carregados na memória. Também é possível removê-los ou salvá-los.]
+	e)"Environment' é a janela que exibe o resultado do que é executado na 'Source'.[errado]
+		[A janela 'Console' exibe o resultado do que é executado na 'Source'.]
+
+Sobre a janela 'Console':
+	a) Exibe a estrutura de arquivos do projeto, além de remover ou salvar os objetos.[ERRADO]
+		[ESTA REFERINDO-SE A ABA 'FILES', NÃO AO CONSOLE.]
+	b) Exibe objetos que estão carregados na memória [errado]
+		[Essa funcionalidade descreve a janela 'Environment'.
+	c) Expressa o resultado das ações realizadas na janela 'Source'[CORRETO]
+	D) É o local para descrever o código. [errado]
+			[O local para descrever o código è na janela 'source']
+	e) Permite instalar, atualizar e pesquisar os pacotes.[errado]
+		[A aba 'Packages' permite instalar, atualizar e pesquisar os pacotes e não o 'console']
+
+Em relaçao às funções dos pacotes 'dplyr' e 'tidyr':
+	a) A função 'arrange()' exibe informações do dataset, como quantidade linhas e o tipo de variáveis. [ERRADO]
+		[A função 'arrange()' é utilizada para ordenar os dados de um dataset, essa função é do 'glimpse']
+	b) A função 'glimpse()' é usada para separar os dados de uma coluna em duas colunas.[ERRADO]
+		[A função 'glimpse' exibe informações do dataset, como quantidade de linhas e o tipo de variáveis.]
+	c) A função 'mutate()' permite criar uma nova coluna, com base em dados de outras colunas.[correto]
+		[Combina o valor de duas ou mais colunas e cria uma nova coluna com o resultado, correto]
+	d) A função 'select()' é utilizada para filtrar as linhas de um dataset.[errado]
+		[SÃO PARA FILTRAR COLUNAS E NÃO LINHAS]
+	E) A função 'separate()' é utilizada para ordenar os dados de um dataset.[errado]
+		[A função separate é usada para separar texto com base em um condição.]
+
+A respeito das funções utilizadas na manipulação de dados em R:
+	a) O 'dplyr' é um pacote que permite selecionar e manipular os data frames.´[CORRETO]
+	B) Para utilizar as funções 'joins' é necessário carregar o pacote 'tidyr'.[ERRADO]
+		[PARA OS JOINS È NECESSÁRIO O PACOTE 'TIDYR']
+	c)Para remover uma coluna de uma seleção, usa-se a função 'select()' com o nome da coluna e o sinal de divisão.[ERRADO]
+		[USA-SE O SINAL DE SUBTRAÇÃO PARA REMOVER]
+	d)Todas as operações executadas na linguagem R exigem a adição do operador %>% ao final da função.[ERRADO]
+	[SOMENTE PARA MAIS DE UMA OPERAÇÃO NA MESMA SINTAXE]
+	e) A função 'gather()' permite mudar o formato do data frame, transformando linhas em colunas.[ERRADO]
+		[O 'GATHER' permite mudar o formato do data frame transformando colunas em linhas, e não linhas em colunas.]
+
+Estruturas da linguagem em R, a respeito de um dataframe:
+	a) Semelhante ao vetor, porém permite adicionar elementos de tipos diferentes.[ERRADO- ISSO É LISTA. NÃO DESCREVE BEM UM DATA FRAME.]
+	b) Armazena um conjunto de valores ordenados, todos do mesmo tipo.[errado - isso É UM vetor]
+	c) Armazena valores categóricos(nominal ou ordinal)[ERRADO - TA MAIS PARA FATOR OU FACTOR]
+	d) Armazena dados tabulares, porém só aceita um tipo de dados.[matriz - definição de MATRIZES e não dataframe]
+	e) Usado para organizar elementos como uma planilha, possui linhas e colunas e pode ser formado por listas ou vetores[CORRETO]
+
