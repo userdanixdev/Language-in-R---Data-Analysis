@@ -1,0 +1,10 @@
+BOEHMKE, B. Reshaping your data with tidyr. UC Business Analytics R Programming Guide, Cincinnati, [2018]. Disponível em: https://uc-r.github.io/tidyr. Acesso em: 11 ago. 2020.
+WICKHAM, H. Gather columns into key-value pairs. Tidyverse, [s. l.], [2020]. Disponível em: https://tidyr.tidyverse.org/reference/gather.html. Acesso em: 10 ago. 2020.
+WICKHAM, H. Separate a character column into multiple columns with a regular expression or numeric locations. . Tidyverse, [s. l.], [2020]. Disponível em: https://tidyr.tidyverse.org/reference/separate.html. Acesso em: 11 ago. 2020.
+WICKHAM, H. Unite multiple columns into one by pasting strings together. Tidyverse, [s. l.], [2020]. Disponível em: https://tidyr.tidyverse.org/reference/unite.html. Acesso em: 11 ago. 2020.
+WICKHAM, H.; FRANÇOIS, R.; HENRY, L.; MÜLLER, K. Arrange rows by column values. Tidyverse, [s. l.], [2020]. Disponível em: https://dplyr.tidyverse.org/reference/arrange.html. Acesso em: 10 ago. 2020.
+WICKHAM, H.; FRANÇOIS, R.; HENRY, L.; MÜLLER, K. Create, modify, and delete columns. Tidyverse, [s. l.], [2020]. Disponível em: https://dplyr.tidyverse.org/reference/mutate.html. Acesso em: 10 ago. 2020.
+WICKHAM, H.; FRANÇOIS, R.; HENRY, L.; MÜLLER, K. Group by one or more variables. Tidyverse, [s. l.], [2020]. Disponível em: https://dplyr.tidyverse.org/reference/group_by.html
+WICKHAM, H.; FRANÇOIS, R.; HENRY, L.; MÜLLER, K. Join two tbls together. Tidyverse, [s. l.], [2020]. Disponível em: https://dplyr.tidyverse.org/reference/join.html. Acesso em: 10 ago. 2020.
+WICKHAM, H.; FRANÇOIS, R.; HENRY, L.; MÜLLER, K. Subset columns using their names and types. Tidyverse, [s. l.], [2020]. Disponível em: https://dplyr.tidyverse.org/reference/select.html. Acesso em: 10 ago. 2020.
+WICKHAM, H.; FRANÇOIS, R.; HENRY, L.; MÜLLER, K. Subset rows using their positions. Tidyverse, [s. l.], [2020]. Disponível em: https://dplyr.tidyverse.org/reference/slice.html. Acesso em: 10 ago. 2020.
