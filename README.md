@@ -1,4 +1,4 @@
-# __Language-in-R---Data-Analysis__
+# __Language-in-R---Data Analysis__
 _Language for graphical and data analysis purposes_
 ***
 Análise de dados em R no âmbito público:
