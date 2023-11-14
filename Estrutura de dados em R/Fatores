@@ -11,3 +11,10 @@ Para ordenar os fatores é necessário acionar dois parâmetros:
 	- levels
 	- ordered
 Obs: é importante listar em ordem CRESCENTE.
+
+===================================================================================
+
+grau.instrucao <- factor(c("Nível Médio,"Superior","Fundamental"),
+			levels = c("Fundamental","Nível Médio","Nível Superior"),
+			ordered = TRUE)
+
