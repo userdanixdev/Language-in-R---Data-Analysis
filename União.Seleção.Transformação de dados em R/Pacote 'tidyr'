@@ -1,0 +1,89 @@
+- Outro pacote importante na estrutura de dados é o 'tidyr', assim como o 'dplyr'.
+install.packages("tidyr") # Para instalar o pacote necessário
+library(tidyr)  # Carregar o pacote para poder usá-lo
+
+Primeiro passo é criar um data frame de vendas de produtos por ano.
+df.date <- data.frame(Produto = c('A','B','C'),
+			A.2015 = c(10,12,20),
+			B.2016 = c(20,25,35),
+			C.2017 = c(15,20,30))
+
+Na tela deverá ficar assim:
+head(dfDate)
+  Produto A.2015 A.2016 A.2017
+       A     10     20     15
+       B     12     25     20
+       C     20     35     30
+
+Devido a esse pacote, poderemos mudar o formato do data.frame:
+	# Transformar colunas em linhas usando a função 'gather()'
+# para isso devemos declarar outra variável para o dataframe:
+	dfDate2 <- gather(dfDate, "Ano", "Quantidade", 2:4)
+Resultado no console:
+head(dfDate2)
+  Produto    Ano Quantidade
+       A A.2015         10
+       B A.2015         12
+       C A.2015         20
+       A A.2016         20
+       B A.2016         25
+       C A.2016         35
+
+Porém, a coluna ano e seus dados, as linhas, estão se repetindo...
+Para isso temos a função 'separate()'. Essa função separa um texto com base em uma condição.
+Devemos declarar outra variável para o dataframe: 'df.Date3'
+Logo devemos nomear o nome das novas colunas que irão receber o resultado da separação.
+
+df.Date3 <- separate(dfDate2, Ano, c('A','Ano'))
+
+Sendo o resultado no console:
+df.Date3 <- separate(dfDate2, Ano, c('A','Ano'))
+> head(df.Date3)
+ Produto A  Ano Quantidade
+       A A 2015         10
+       B A 2015         12
+       C A 2015         20
+       A A 2016         20
+       B A 2016         25
+       C A 2016         35
+
+Para deletar a coluna 'A' que não serve para nada:
+
+df.Date3 <- df.Date3[-2] # A segunda coluna é a 'A'.
+Sendo assim:
+
+Produto  Ano Quantidade
+       A 2015         10
+       B 2015         12
+       C 2015         20
+       A 2016         20
+       B 2016         25
+       C 2016         35
+
+OUTRA FUNÇÃO PARA TRANSFORMAR DADOS:
+	# Acrescentando uma coluna 'Mês':
+df.Date3$Mês <- c('01','02','03')   # E acrescentar os valores para a coluna juntamente com o parâmetro c
+O resultado ficará:
+df.Date3$Mês <- c('01','02','03')
+> head(df.Date3)
+  Produto  Ano Quantidade Mês
+       A 2015         10  01
+       B 2015         12  02
+       C 2015         20  03
+       A 2016         20  01
+       B 2016         25  02
+       C 2016         35  03
+
+FUNÇÃO 'UNITE()' é possível juntar os dados de diferentes colunas:
+Nesse caso é necessário declarar um novo data.frame baseado no anterior, logo criar o nova coluna 'Data' e as colunas que desejamos unir:
+df.Date4 <- df.Date3 %>%
+	unite(Data,Mês,Ano,sep='/')   # 'sep' é o parâmetro que irá separar o mês do ano.
+Sendo assim, no console:
+Produto    Data Quantidade
+       A 01/2015         10
+       B 02/2015         12
+       C 03/2015         20
+       A 01/2016         20
+       B 02/2016         25
+       C 03/2016         35
+
