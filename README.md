@@ -1,6 +1,7 @@
 # __Language-in-R---Data Analysis__
-_Language for graphical and data analysis purposes_
 ***
+_Language for graphical and data analysis purposes_
+****
 Análise de dados em R no âmbito público:
 	- Diversas áreas governamentais de vários países estão se beneficiando com a análise de dados.
 Saúde: Centro de controle e prevenção de doenças utilizam os dados para prever surtos de gripe e rastrear padrões da doença.
