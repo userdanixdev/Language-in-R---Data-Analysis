@@ -1,4 +1,4 @@
-# __Language-in-R---Data Analysis_![image](https://github.com/userdanixdev/Language-in-R---Data-Analysis/assets/132594952/b4c47ac5-3060-47ed-86d5-c58cdaa4bbc9)
+# __Language-in-R---Data Analysis__![image](https://github.com/userdanixdev/Language-in-R---Data-Analysis/assets/132594952/b4c47ac5-3060-47ed-86d5-c58cdaa4bbc9)
 ***
 _Language for graphical and data analysis purposes_
 ****
