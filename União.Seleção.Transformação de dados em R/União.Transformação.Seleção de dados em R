@@ -1,0 +1,72 @@
+Funções relacionadas a UNIÃO, SELEÇÃO E TRANSFORMAÇÃO DE DADOS EM LINGUAGEM R.
+	É permitido unir dois conjuntos de dados em um único lugar.  os 'joins'
+
+# Join:
+df1 <- data.frame(Produto = c(1,2,3,5), Preco = c(15,10,25,20))
+head(df1)
+Resultado no console:
+ Produto Preco
+       1    15
+       2    10
+       3    25
+       5    20
+
+df2 <- data.frame(Produto = c(1,2,3,4), Nome = c("A","B","C","D"))
+head(df2)
+Produto Nome
+       1    A
+       2    B
+       3    C
+       4    D
+
+União dos dados das duas tabelas:
+df3 <- left_join(df1,df2,"Produto")
+head(df3)
+# Irá unir os dados de duas tabelas com base em alguma coluna, no caso 'produto.' O left join mantém os dados da tabela da esquerda e caso não encontre
+nenhum valor correspondente da direita, é atribuido o valor '<NA>'.
+Resultado no console:
+
+df3 <- left_join(df1,df2,"Produto")
+> head(df3)
+  Produto Preco Nome
+       1    15    A
+       2    10    B
+       3    25    C
+       5    20 <NA>
+
+
+df4 <- right_join(df1,df2,"Produto")
+head(df4)
+
+df4 <- right_join(df1,df2,"Produto")
+> head(df4)
+  Produto Preco Nome
+       1    15    A
+       2    10    B
+       3    25    C
+       4    NA    D
+
+INNER JOIN:
+# Unir os valores que aparecem nas duas tabelas:
+
+df5 <- inner_join(df1,df2,"Produto")
+head(df5)
+
+Resultado no console:
+Produto Preco Nome
+       1    15    A
+       2    10    B
+       3    25    C
+
+
+# Full Join:
+# Une todos os valores das duas tabelas não correspondentes.
+df6 <- full_join(df1,df2,"Produto")
+> head(df6)
+Resultado console:
+  Produto Preco Nome
+       1    15    A
+       2    10    B
+       3    25    C
+       5    20 <NA>
+       4    NA    D
