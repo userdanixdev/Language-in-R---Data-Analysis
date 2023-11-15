@@ -1,0 +1,200 @@
+Pacote dplyr - Pacote que permite selecionar e manipular dataframes.
+
+dataset 'iris' - Conjunto de dados que vem por padrão na linguagem R
+o dataset iris possui medidas, em centimetros, da pétala e da sépala de uma flor.
+Classifica-se essas flores em SETOSA, VIRGINICA e VERSICOLOR.
+
+head(iris)
+Resultado no console:
+
+Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+          5.1         3.5          1.4         0.2  setosa
+          4.9         3.0          1.4         0.2  setosa
+          4.7         3.2          1.3         0.2  setosa
+          4.6         3.1          1.5         0.2  setosa
+          5.0         3.6          1.4         0.2  setosa
+          5.4         3.9          1.7         0.4  setosa
+Para obter mais informações sobre o dataset como variáveis, tipo e valores das colunas,
+é necessário a função 'glimpse()' pertencente ao pacote 'dplyr'.
+
+glimpse(iris)
+Resultado no console:
+
+ glimpse(iris)
+Rows: 150
+Columns: 5
+$ Sepal.Length <dbl> 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4.8, 4.8,…
+$ Sepal.Width  <dbl> 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3.0,…
+$ Petal.Length <dbl> 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1.6, 1.4,…
+$ Petal.Width  <dbl> 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1,…
+$ Species      <fct> setosa, setosa, setosa, setosa, setosa, setosa, setosa, setosa, …
+
+# Filtrar os dados:
+# NEsse caso somente 'versicolor' espécie
+
+versicolor <- filter(iris, Species == "versicolor")  # coluna: 'species'
+
+dim(versicolor)  # função 'dim' para retornar a quantidade de linas e colunas.
+O resultado no console pela função 'dim' é somente 50 linhas em 5 colunas.
+COm a função 'head' nos informa a tabela completa da espécie 'versicolo', abaixo:
+head(versicolor)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+1          7.0         3.2          4.7         1.4 versicolor
+2          6.4         3.2          4.5         1.5 versicolor
+3          6.9         3.1          4.9         1.5 versicolor
+4          5.5         2.3          4.0         1.3 versicolor
+5          6.5         2.8          4.6         1.5 versicolor
+6          5.7         2.8          4.5         1.3 versicolor
+
+Assim também podemos filtrar de outras espécies dentro do dataset:
+ virginica <- filter(iris,Species == "virginica")
+> dim(virginica)
+[1] 50  5
+> head(virginica)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+          6.3         3.3          6.0         2.5 virginica
+          5.8         2.7          5.1         1.9 virginica
+          7.1         3.0          5.9         2.1 virginica
+          6.3         2.9          5.6         1.8 virginica
+          6.5         3.0          5.8         2.2 virginica
+          7.6         3.0          6.6         2.1 virginica
+
+# SLICE: seleciona algumas linhas especificas:
+slice(iris,5:10)
+
+A função 'SELECT' seleciona colunas:
+select(virginica,2:4)
+
+#Selecionar todas as colunas exceto uma:
+select(virginica, -Species)
+
+Combinar valores de uma ou mais colunas com a função mutate()
+** Tipo somar **
+Para isso é necessária criar uma nova coluna com base nas colunas existentes:
+iris2 <- mutate(versicolor, soma_length_width = Sepal.length + Sepal.width)
+Para mostrar na tela:
+iris2[,c("Sepal.Length","Sepal.Width","soma_sepal_length_width")]
+		OU
+print(iris2)  # tabela completa, com a função 'mutate'
+		OU
+head(iris2)  # Para ter somente a parte de cima da tabela
+
+A função 'arrange()' permite ordernar os dados de um data frame assim como as COLUNAS A SEREM ORDENADAS:
+# Para isso, é necessário o parâmetro 'select' e entre parênteses as colunas a serem ordenadas:
+select(iris2, soma_sepal_sength_width, sepal.length, sepal.width)  '%>%'  # Habilita realizar mais de uma operação 
+arrange()
+
+GROUP BY:
+	iris %>% group_by(Species) %>%
+		summarise(mean(Sepal.Length))   # 'mean' parâmetro para cálculo da média
+						# função summarise obrigatória ou outra fução para GROUP BY
+
+Resultado no console:
+ A tibble: 3 × 2
+  Species    `mean(Sepal.Length)`
+  <fct>                     <dbl>
+ setosa                     5.01
+ versicolor                 5.94
+ virginica                  6.59
+
+iris %>% group_by(Species) %>%
+	summarise(mean(Sepal.Width))
+
+Resultado no console:
+
+Species    `mean(Sepal.Width)`
+  <fct>                    <dbl>
+ setosa                    3.43
+ versicolor                2.77
+ virginica                 2.97
+
+TRANSFORMANDO DADOS:
+	- Outro pacote importante na estrutura de dados é o 'tidyr', assim como o 'dplyr'.
+install.packages("tidyr") # Para instalar o pacote necessário
+library(tidyr)  # Carregar o pacote para poder usá-lo
+
+Primeiro passo é criar um data frame de vendas de produtos por ano.
+df.date <- data.frame(Produto = c('A','B','C'),
+			A.2015 = c(10,12,20),
+			B.2016 = c(20,25,35),
+			C.2017 = c(15,20,30))
+
+Na tela deverá ficar assim:
+head(dfDate)
+  Produto A.2015 A.2016 A.2017
+       A     10     20     15
+       B     12     25     20
+       C     20     35     30
+
+Devido a esse pacote, poderemos mudar o formato do data.frame:
+	# Transformar colunas em linhas usando a função 'gather()'
+# para isso devemos declarar outra variável para o dataframe:
+	dfDate2 <- gather(dfDate, "Ano", "Quantidade", 2:4)
+Resultado no console:
+head(dfDate2)
+  Produto    Ano Quantidade
+       A A.2015         10
+       B A.2015         12
+       C A.2015         20
+       A A.2016         20
+       B A.2016         25
+       C A.2016         35
+
+Porém, a coluna ano e seus dados, as linhas, estão se repetindo...
+Para isso temos a função 'separate()'. Essa função separa um texto com base em uma condição.
+Devemos declarar outra variável para o dataframe: 'df.Date3'
+Logo devemos nomear o nome das novas colunas que irão receber o resultado da separação.
+
+df.Date3 <- separate(dfDate2, Ano, c('A','Ano'))
+
+Sendo o resultado no console:
+df.Date3 <- separate(dfDate2, Ano, c('A','Ano'))
+> head(df.Date3)
+ Produto A  Ano Quantidade
+       A A 2015         10
+       B A 2015         12
+       C A 2015         20
+       A A 2016         20
+       B A 2016         25
+       C A 2016         35
+
+Para deletar a coluna 'A' que não serve para nada:
+
+df.Date3 <- df.Date3[-2] # A segunda coluna é a 'A'.
+Sendo assim:
+
+Produto  Ano Quantidade
+       A 2015         10
+       B 2015         12
+       C 2015         20
+       A 2016         20
+       B 2016         25
+       C 2016         35
+
+OUTRA FUNÇÃO PARA TRANSFORMAR DADOS:
+	# Acrescentando uma coluna 'Mês':
+df.Date3$Mês <- c('01','02','03')   # E acrescentar os valores para a coluna juntamente com o parâmetro c
+O resultado ficará:
+df.Date3$Mês <- c('01','02','03')
+> head(df.Date3)
+  Produto  Ano Quantidade Mês
+       A 2015         10  01
+       B 2015         12  02
+       C 2015         20  03
+       A 2016         20  01
+       B 2016         25  02
+       C 2016         35  03
+
+FUNÇÃO 'UNITE()' é possível juntar os dados de diferentes colunas:
+Nesse caso é necessário declarar um novo data.frame baseado no anterior, logo criar o nova coluna 'Data' e as colunas que desejamos unir:
+df.Date4 <- df.Date3 %>%
+	unite(Data,Mês,Ano,sep='/')   # 'sep' é o parâmetro que irá separar o mês do ano.
+Sendo assim, no console:
+Produto    Data Quantidade
+       A 01/2015         10
+       B 02/2015         12
+       C 03/2015         20
+       A 01/2016         20
+       B 02/2016         25
+       C 03/2016         35
+
