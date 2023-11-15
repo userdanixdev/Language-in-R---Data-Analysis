@@ -175,3 +175,89 @@ summary(data$'Valor passagens')
 
 # ATENÇÃO!!  Percebe-se que o valor máximo está muito distante da média 'mean' indicando a presença de 'outliers'. São valores que fogem da normalidade
 fazendo com que o resultado da análise não reflita a realidade.
+
+## Visualizando esse valores acima num gráfico 'boxplot':
+boxplot(data$'Valor passagens')  # Certificando que realmente tem um 'outliers'
+
+## Calculando o desvio padrão:
+Necessário usar a função 'sd()' em seguida o nome do data.frame e coluna desejada.
+sendo assim a sintaxe: sd(data$'Valor passagens')
+Resultado no console:
+sd(data$'Valor passagens')
+[1] 1293.192
+#  MAIS FUNÇÕES INTERESSANTES NA FASE DE EXPLORAÇÃO DE DADOS:
+	PARA VERIFICAR SE EXISTEM CAMPOS DE VALORES NÃO PREENCHIDOS USA-SE A FUNÇÃO 'is.na()'
+	
+	Já a função 'colSums()' contabiliza a quantidade de campos não preenchidos por coluna.
+
+Podemos usar as duas funções ao mesmo tempo, sendo assim a sintaxe:
+	- colSums(is.na(data))
+Resultado no console:
+> colSums(is.na(data))
+Identificador do processo de viagem           Número da Proposta (PCDP) 
+                                  0                                   0 
+                           Situação                      Viagem Urgente 
+                                  0                                   0 
+      Justificativa Urgência Viagem            Código do órgão superior 
+                                  0                                   0 
+             Nome do órgão superior            Código órgão solicitante 
+                                  0                                   0 
+             Nome órgão solicitante                        CPF viajante 
+                                  0                                   0 
+                               Nome                               Cargo 
+                                  0                                   0 
+                             Função                    Descrição Função 
+                                  0                                   0 
+           Período - Data de início               Período - Data de fim 
+                                  0                                   0 
+                           Destinos                              Motivo 
+                                  0                                   0 
+                      Valor diárias                     Valor passagens 
+                                  0                                   0 
+                    Valor devolução                 Valor outros gastos 
+                                  0                                   0
+
+
+Filtrando valores:
+#Outro exemplo de histograma - filtrando valores
+
+#Para esse exemplo serão utilizadas as funções filter e select
+?dplyr::filter
+?dplyr::select
+
+# Apenas passagens entre 200 e 5000:
+Segue sintaxe abaixo:   # declarar uma variável para tal fim:
+	- passagens_filtro <- data %>%
+		select('Valor passagens') %>%
+		filter('Valor passagens' >= 200 & 'Valor passagens' <= 5000)
+# Por fim, chamar a função do gráfico:
+	passagens_filtro
+	hist(passagens_filtro$'Valor passagens')
+
+
+MAIS FUNÇÕES DE ANÁLISES DE DADOS:
+	- str(data$Situação) ou a tabela inteira  'str(data)'
+
+	# Para verificar a quantidade de ocorrências para cada classe, usamos a função 'table()'
+		table(data$Situação)
+	Resultado no console:
+		Não realizada     Realizada 
+                      19389        825276 
+
+## Para obtermos o valor em percentual, aplicamos a função 'prop.table()' e multiplicamos por 100.
+	Sendo assim:  prop.table(table(data$Situação))*100
+Resultado no console:
+	Não realizada     Realizada 
+            2.295466     97.704534 
+
+VISUALIZAÇÃO DOS RESULTADOS:
+	# 1. Quais órgãos estão gastando mais com passagens aéreas?
+Obs: Para isso devemos criar um data frame com os órgãos que mais gastam.
+
+Carregar o módulo 'dplyr' chamar uma variável de p1:
+
+p1 <- data %>%
+	group_by('Nome do órgao superior') %>%
+	summarise(n = sum('Valor passagens')) %>%  # para somar o valor gasto de passagens por órgão.
+	arrange (desc(n) %>% 				# a função 'arrange' para ordenar, no caso, em decrescente
+	top_n (15)		# função de filtra para somente até o 15° resultado da lista.
