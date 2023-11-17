@@ -428,3 +428,4 @@ diabetes<- read.csv("C:/Users/Daniel/Desktop/Pós-graduação- Análise de dados
 head(diabetes)
 
 resultado1<- read.csv ("C:/Users/Daniel/Documents/resultado1.csv")
+
