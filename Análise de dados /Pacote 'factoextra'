@@ -1,0 +1,18 @@
+O pacote 'factoextra' para linguagem em R facilita o trabalho separando os métodos em grupos: VISUALIZAÇÃO DE DADOS DE SAÍDA E ANÁLISE DE REDUÇÃO DE DIMENSÃO.
+
+Por que usar o factoextra?
+O pacote fatoextra R pode tratar os resultados de PCA, CA, MCA, MFA, FAMD e HMFA de diversos pacotes, para extrair e visualizar as informações mais importantes contidas em seus dados.
+
+Depois de PCA, CA, MCA, MFA, FAMD e HMFA, os elementos de linha/coluna mais importantes podem ser destacados usando:
+
+seus valores cos2 correspondentes à sua qualidade de representação no mapa fatorial
+suas contribuições para a definição das dimensões principais.
+Se você quiser fazer isso, o pacote factoextra oferece uma solução conveniente.
+
+PCA e (M)CA são usados algumas vezes para problemas de predição: pode-se prever as coordenadas de novas variáveis suplementares (quantitativas e qualitativas) 
+e indivíduos suplementares usando as informações fornecidas pelo PCA ou (M)CA realizado anteriormente. Isso pode ser feito facilmente usando o pacote FactoMineR.
+Se você deseja fazer previsões com PCA/MCA e visualizar a posição das variáveis/indivíduos suplementares no mapa de fatores usando ggplot2: então o fatoextra pode 
+te ajudar. É rápido, escreva menos e faça mais…
+
+Diversas funções de diferentes pacotes - FactoMineR, ade4, ExPosition, stats - estão disponíveis em R para realizar PCA, CA ou MCA. No entanto, 
+os componentes da saída variam de pacote para pacote.
