@@ -143,6 +143,14 @@ The analysis was performed on 50 individuals, described by 4 variables
 ==================================================================
 eig<- get_eigenvalue(pca)
 eig
+eig
+      eigenvalue variance.percent cumulative.variance.percent
+Dim.1  2.4802416        62.006039                    62.00604
+Dim.2  0.9897652        24.744129                    86.75017
+Dim.3  0.3565632         8.914080                    95.66425
+Dim.4  0.1734301         4.335752                   100.00000
+
+
 # Entretanto, essa medida não é suficiente para se definir quantos componentes são necessários.
 # Um método alternativo para determinar o número de componentes principais é olhar para um Scree Plot, gráfico de autovalores
 ordenados do maior para o menor:
