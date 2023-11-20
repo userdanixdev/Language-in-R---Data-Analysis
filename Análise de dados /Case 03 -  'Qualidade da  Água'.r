@@ -54,11 +54,11 @@ Uso da linguagem em R do PCA para o contexto abordado do Professor Carvalho Ribe
 	view(qualidade_agua)
 # Remover qualquer dado nulo ou faltante presente nos dados:
 	qualidade_agua < - na.omit(qualidade_agua)
+
 #Criar subconjunto de indivíduos ativos ( linhas ) e variáveis ativas (colunas ) para a análise:
 # Porém, antes de chamar a função, selecionar as colunas e linhas relevantes para a análise:
- # Sendo assim, iremos reduzir a tabela inserida, removendo a coluna manualmente, pois trata-se de um dado categórico, irrelevante para a análise.
+# Sendo assim, iremos reduzir a tabela inserida, removendo a coluna manualmente, pois trata-se de um dado categórico, irrelevante para a análise.
 ## A coluna da tabela chamada 'local' não será feita análise alguma: linha 1 até 12 [1:12] e coluna 2 até a 5 [2:5]
-
 qualidade_agua_active <- qualidade_agua[1:12,2:5]
 
 # Visualizar os dados novamente para verificar as atualizações:
@@ -67,18 +67,66 @@ head(qualidade_agua.active[,1:4],3)   # Opcional, para verificar somente os dado
 
 # O FactoMineR já fez a padronização automaticamente não sendo necessário o uso da escala:
 qualidade_agua.active <- scale(qualidade_agua.active)
+scale(qualidade_agua_active)
+           ph          n       oxig    m_organ
+  -0.6321607 -0.6524867  0.1618347 -0.6122789
+  -1.4657791 -0.3120589  0.1618347 -0.8182792
+  -0.6321607 -0.6524867  1.1328430 -0.7496124
+  -1.4657791 -0.3120589  2.1038513 -0.6809456
+   0.4515433 -0.6524867  0.1618347 -0.8182792
+   0.2014578 -0.9929146 -0.8091736 -0.6809456
+  -0.2153514 -0.3120589  0.1618347 -0.6122789
+  -0.6321607 -0.6524867 -1.7801819 -0.4062785
+   1.0350762  2.4113641 -0.8091736  1.2417244
+   1.4518855  1.3900805  0.1618347  1.3103912
+   1.2851618  0.3687969  0.1618347  1.3790580
+   0.6182670  0.3687969 -0.8091736  1.4477248
+attr(,"scaled:center")
+           ph             n          oxig       m_organ 
+ 3.608225e-16  2.498002e-16 -3.238150e-17  8.789266e-17 
+attr(,"scaled:scale")
+     ph       n    oxig m_organ 
+      1       1       1       1 								
 
 # Gerar PCA ( Principal Components Analysis )
 resposta.pcs <-PCA(qualidade_agua.active, graph = FALSE)
+**Results for the Principal Component Analysis (PCA)**
+The analysis was performed on 12 individuals, described by 4 variables
+*The results are available in the following objects:
+
+   name               description                          
+1  "$eig"             "eigenvalues"                        
+2  "$var"             "results for the variables"          
+3  "$var$coord"       "coord. for the variables"           
+4  "$var$cor"         "correlations variables - dimensions"
+5  "$var$cos2"        "cos2 for the variables"             
+6  "$var$contrib"     "contributions of the variables"     
+7  "$ind"             "results for the individuals"        
+8  "$ind$coord"       "coord. for the individuals"         
+9  "$ind$cos2"        "cos2 for the individuals"           
+10 "$ind$contrib"     "contributions of the individuals"   
+11 "$call"            "summary statistics"                 
+12 "$call$centre"     "mean of the variables"              
+13 "$call$ecart.type" "standard error of the variables"    
+14 "$call$row.w"      "weights for the individuals"        
+15 "$call$col.w"      "weights for the variables"     								
 
 # Extrair a proporção de variância dos valores dos componentes principais ( alto valores )
 # 'get_eigenvalue' extraia e visualize os autovalores/variâncias de dimensões.
 
 eig.val <- get_eigenvalue(resposta.pca)
 eig.val   
-
+eigenvalue variance.percent cumulative.variance.percent
+Dim.1  2.6312084        65.780209                    65.78021
+Dim.2  0.9033544        22.583860                    88.36407
+Dim.3  0.3295158         8.237895                    96.60196
+Dim.4  0.1359215         3.398037                   100.00000
 # Plotar no gráfico mostrando a proporção de variância de cada variável:
 #  fviz_eig (ou fviz_eigenvalue): extraia e visualize os autovalores/variâncias de dimensões.
+## Plotar o gráfico do PCA com resultados individuais e com resultados de variáveis:
+fviz_pca_var(resposta.pca, col.var = 'blue')
+fviz_pca_ind(resposta.pca, col.var = "blue")
+						
 
 fviz_eig(resposta.pca, addlabels = TRUE, ylim = c(0,90))		# Parâmetros para colocar no gráfico
 
