@@ -242,4 +242,5 @@ Obs: *** A PROPORÇÃO DE VARIAÇÃO POR CADA AUTOVALOR É DADA NA COLUNA 'EIGEN
 PARA VISUALIZAR O QUADRO DE VARIÁVEIS E SUA PORCENTAGENS É NECESSÁRIO EXECUTAR A VARIÁVEL DECLARADA: 
 
 eig <-get_eigenvalue(pca) depois eig no RStudio.
+============================================================
 
