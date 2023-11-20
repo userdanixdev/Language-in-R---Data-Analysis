@@ -119,6 +119,28 @@ attr(,"scaled:scale")
        1        1        1        1 
 ==================================================================
 pca = PCA(df, graph = FALSE)
+pca
+**Results for the Principal Component Analysis (PCA)**
+The analysis was performed on 50 individuals, described by 4 variables
+*The results are available in the following objects:
+
+   name               description                          
+1  "$eig"             "eigenvalues"                        
+2  "$var"             "results for the variables"          
+3  "$var$coord"       "coord. for the variables"           
+4  "$var$cor"         "correlations variables - dimensions"
+5  "$var$cos2"        "cos2 for the variables"             
+6  "$var$contrib"     "contributions of the variables"     
+7  "$ind"             "results for the individuals"        
+8  "$ind$coord"       "coord. for the individuals"         
+9  "$ind$cos2"        "cos2 for the individuals"           
+10 "$ind$contrib"     "contributions of the individuals"   
+11 "$call"            "summary statistics"                 
+12 "$call$centre"     "mean of the variables"              
+13 "$call$ecart.type" "standard error of the variables"    
+14 "$call$row.w"      "weights for the individuals"        
+15 "$call$col.w"      "weights for the variables"          
+==================================================================
 eig<- get_eigenvalue(pca)
 eig
 # Entretanto, essa medida não é suficiente para se definir quantos componentes são necessários.
