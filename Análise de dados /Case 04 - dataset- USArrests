@@ -59,6 +59,7 @@ Wisconsin         2.6      53       66 10.8
 Wyoming           6.8     161       60 15.6
 df<- scale(df)
 df<-scale(df)
+## 
 > scale(df)
                     Murder     Assault    UrbanPop         Rape
 Alabama         1.24256408  0.78283935 -0.52090661 -0.003416473
