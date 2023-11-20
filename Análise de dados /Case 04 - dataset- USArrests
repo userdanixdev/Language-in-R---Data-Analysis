@@ -1,0 +1,103 @@
+PCA - Exemplo prático - Dataset - USArrests
+
+library(factoextra)
+library(factoMineR)
+
+# carregar o dataset:
+df<- USArrests
+df<- scale(df)
+pca = PCA(df, graph = FALSE)
+eig<- get_eigenvalue(pca)
+eig
+# Entretanto, essa medida não é suficiente para se definir quantos componentes são necessários.
+# Um método alternativo para determinar o número de componentes principais é olhar para um Scree Plot, gráfico de autovalores
+ordenados do maior para o menor:
+
+Sendo assim, o eixo 1 possui 62% e o eixo 2: 24.7%:
+fviz_eig(pca,addlabels = TRUE, ylim = c(0,70)
+
+# Outro método para extrair resultado de saída PCA é mostrando a matriz contendo todos os resultados das variáveis ativas.
+# Como coordenadas, correlação entre variáveis, eixos, cosseno e contribuições.
+# Executando a função 'get_pca_var()'
+# Pelo contexto abordado a sintaxe é:
+	get_pca_var(pca)    # Resultados das variáveis de PCA.
+
+Principal Component Analysis Results for variables
+ ===================================================
+  Name       Description                                    
+ "$coord"   "Coordinates for the variables"                
+ "$cor"     "Correlations between variables and dimensions"
+ "$cos2"    "Cos2 for the variables"                       
+ "$contrib" "contributions of the variables" 
+
+# Criar uma variável chamada 'var' para correlacionar com a variável ativa '$coord' para extrair mais resultados:
+var<- get_pca_var(pca)
+var
+head(var$coord,4)
+head(var$coord)
+             Dim.1      Dim.2      Dim.3       Dim.4
+Murder   0.8439764 -0.4160354  0.2037600  0.27037052
+Assault  0.9184432 -0.1870211  0.1601192 -0.30959159
+UrbanPop 0.4381168  0.8683282  0.2257242  0.05575330
+Rape     0.8558394  0.1664602 -0.4883190  0.03707412
+
+
+Informações sobre outros resultados das variáveis:
+var$coord: criar um gráfico de dispersão.
+
+var$cos2: representa a qualidade de representação das variáveis no mapa de fatores. É calculado como as coordenadas quadradas: var.cos2 = var.coord * var.coord.
+
+var$contrib: contém as contribuições (em porcentagem) das variáveis para os componentes principais.
+
+ROTAÇÃO DE FATORES:
+	- Essa técnica os eixos de referência são rotacionais em torno da origem até que outra posição seja alcançada.
+O primeiro fator tende a ser um fator geral com quase toda variável com carga significante e explica a quantia maior de
+variância. O segundo fator e os seguintes são então baseados em quantias residuais de variância menores e cada fator extrai
+porções cada vez menores de variância.
+	- O efeito final de rotacionar a matriz fatorial é redistribuir a variância dos primeiros fatores para os últimos com o
+objetivo de atingir um padrão fatorial mais simples e teoricamente mais significativo.
+Obs:  ** PARA DEMONSTRAR AS RELAÇÕES DAS VARIÁVEIS EM COORDENADAS PODEMOS UTILIZAR O CÍRCULO DE CORRELAÇÃO GERADO PELA FUNÇÃO JÁ
+		CONHECIDA E FEITA POR NÓS : 'FVIZ_PCA_VAR'
+
+- O gráfico que melhor representa as coordenadas e também pode ser melhor interpretativo é o de eixos X e Y no plano.
+	- As variáveis positivas correlacionadas são agrupadas.
+	- As variáveis negativas correlacionadas são posicionadas em lados opostos da origem ( quadrantes opostos ).
+	- A distância entre as variáveis e a origem mede a qualidade das variáveis no mapa de fatores.
+head(var$coord, 4)
+fviz_pca_var(pca, col.var = 'cos2', gradient.cols = c('#000AFBB', '#E7B800', '#FC4E07'), repel = TRUE) # Gráfico de correlação
+
+head(var$contrib,4)
+fviz_contrib(pca, choice = 'var', axes = 1, top = 10)
+
+# GRÁFICOS DE INDIVÍDUOS, QUALIDADE E CONTRIBUIÇÕES:
+	- O gráfico de individuos poderá ser impressio de várias maneiras; As funções get_pa_ind() e get_pca_var()
+imprime os resultados contendo coordenadas, correlação entre indivíduos e eixos, cosseno ao quadrado e contribuições.
+# Podemos visualizar as variáveis de indivíduos executando o código:
+
+
+fviz_pca_ind(pca, col.ind = 'cos2', gradient.cols = c('#00AFBB','#E7B800','#FC4E07'), repel = TRUE)
+
+fviz_pca_ind(pca, pointsize = 'cos2', pointshape = 21, fill = "#E7B800', repel = TRUE)
+
+fviz_pca_ind(pca, col.ind = 'cos2', gradient.cols = c('#00AFBB', '#E7B800', '#FC4E07'), repel = TRUE)
+
+Ou ainda podemos gerar um gráfico de barras:
+
+fviz_pca_contrib(res.pca, choice = 'ind', axes = 1:2)
+
+fviz_contrib(res.pca, choice = 'ind', a
+
+fviz_pca_ind(pca, pointsize = 'cos2', pointshape = 21, fill = '#E7B800', repel = TRUE)
+
+fviz_contrib(res.pca, choice = 'ind', axes = 1:2)
+
+Autovalores e variâncias:
+	- Os autovalores medem a quantidade de variação retida por cada componente principal. Os autovalores são grandes para os
+primeiros componentes e pequenos para os subsequentes, ou seja, os primeiros PCs correspondem às direções com a quantidade máxima de
+variação no conjunto de dados. Para visualizar a extração, usa-se a função 'get_eigenvalue'
+Obs: *** A PROPORÇÃO DE VARIAÇÃO POR CADA AUTOVALOR É DADA NA COLUNA 'EIGENVALUE'. 
+	- A maioria da variação é explicada pelos dois primeiros autovalores juntos.
+PARA VISUALIZAR O QUADRO DE VARIÁVEIS E SUA PORCENTAGENS É NECESSÁRIO EXECUTAR A VARIÁVEL DECLARADA: 
+
+eig <-get_eigenvalue(pca) depois eig no RStudio.
+
