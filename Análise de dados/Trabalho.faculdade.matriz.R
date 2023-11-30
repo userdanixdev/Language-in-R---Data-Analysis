@@ -156,4 +156,31 @@ rect.hclust(grupos,k=4,border='10')
 # Grafo para a matriz adjacente:
 matriz_adj = graph.adjacency(matriz, mode='undirected', weighted=TRUE)
 plot(matriz_adj)
-
+# Abaixo para mostrar os valores :
+matriz_adj[]
+Rio de Janeiro     .   500  1200 20000 50000 25000 35000 20000 25000 24000
+São Paulo        500     .  1300 21000 51000 26000 36000 21000 26000 25000
+Brasilia        1200  1300     . 19000 50000 28000 35500 20000 25000 24000
+Nova York      20000 21000 19000     . 50000 25000 10000 12000  8000  8000
+Tokio          50000 51000 50000 50000     . 50000 55000 57000 55000 55000
+londres        25000 26000 28000 25000 50000     . 35000 45000 40000 40000
+Vancouver      35000 36000 35500 10000 55000 35000     . 15000 10000 10000
+Buenos Aires   20000 21000 20000 12000 57000 45000 15000     .  5000  5000
+Las Vegas      25000 26000 25000  8000 55000 40000 10000  5000     .  1000
+California     24000 25000 24000  8000 55000 40000 10000  5000  1000    NA
+# Abaixo para mostrar os valores literais:
+print(matriz_adj)
+ print(matriz_adj)
+IGRAPH 61a5db3 UNW- 10 46 -- 
++ attr: name (v/c), weight (e/n)
++ edges from 61a5db3 (vertex names):
+ [1] Rio de Janeiro--São Paulo    Rio de Janeiro--Brasilia     Rio de Janeiro--Nova York   
+ [4] Rio de Janeiro--Tokio        Rio de Janeiro--londres      Rio de Janeiro--Vancouver   
+ [7] Rio de Janeiro--Buenos Aires Rio de Janeiro--Las Vegas    Rio de Janeiro--California  
+[10] São Paulo     --Brasilia     São Paulo     --Nova York    São Paulo     --Tokio       
+[13] São Paulo     --londres      São Paulo     --Vancouver    São Paulo     --Buenos Aires
+[16] São Paulo     --Las Vegas    São Paulo     --California   Brasilia      --Nova York   
+[19] Brasilia      --Tokio        Brasilia      --londres      Brasilia      --Vancouver   
+[22] Brasilia      --Buenos Aires Brasilia      --Las Vegas    Brasilia      --California  
++ ... omitted several edges
+=-==============================================================================================
