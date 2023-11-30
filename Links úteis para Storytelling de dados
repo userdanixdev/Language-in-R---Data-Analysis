@@ -18,7 +18,7 @@ https://www.youtube.com/watch?v=atmKU5NuHSA
 *** Link que o professor Luiz Antonio passou sobre algo relacionado a analise de dados. Não vi ainda.... 13/11/23 ***
 ========================================================================================================================
 
-Análise de Artigos Científicos usando R:
+Análise de Artigos Científicos usando pacotes do R, porém, usando o programa 'IRAMUTEQ':
 
  https://www.youtube.com/watch?v=e8SxNOjYFPc
 
@@ -58,3 +58,21 @@ https://www.globalsmartcitiesalliance.org/smart-cities-benchmarking-tool
 
 Ajude a melhorar o desempenho das cidades tecnológicas com projetos. 
 =======================================================================================================================
+- Levantamento que fiz em sala de aula sobre PCA, tem no repositório a base de dados sobre a qualidade da água.
+
+Olá turma e tutor;
+
+Segue levantamento de discussão sobre PCA (Principal Component Analysis ) referente a AULA 03, Capítulo 02 da disciplina vigente.
+
+A análise de componentes principais é uma técnica da estatística multivariada que consiste em transformar um conjunto de variáveis originais em outro conjunto de variáveis de mesma dimensão denominadas de componentes principais (HONGYU, 2015, p. 83) No conteúdo abordado do material didático, pouco se aproveita sem a abordagem de um contexto, os conceitos são bons e sem a prática, bem provável que ficará perdido neles. O objetivo do levantamento é esclarecer mais sobre essa parte da estatística multivariada, sendo um ponto de partida para outros estudos sub sequentes. Sendo assim, por meio dos links de estudo relativos a disciplina através do Tutor Luiz Santos, realizei pesquisas aprofundadas sobre o assunto.
+
+O contexto abordado  é a 'Qualidade da Água em regiões rurais, urbanas e nascentes' 
+
+Muito interessante e desafiador!
+
+1.https://www.youtube.com/watch?v=KqZAC4jyJKc&t=749s  <----  Excelente didática sobre o tema, para início.
+
+2.https://www.youtube.com/watch?v=hmp9KIPb5Ig  <- -- Aprofundamento do tema em linguagem R.
+
+3.https://www.youtube.com/watch?v=jOo0L-Jypyc   <- Uso do pacote 'factoshiny' sobre o tema (Excelente pacote!)
+
