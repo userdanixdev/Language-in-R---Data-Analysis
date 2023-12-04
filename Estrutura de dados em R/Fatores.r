@@ -18,3 +18,4 @@ grau.instrucao <- factor(c("Nível Médio,"Superior","Fundamental"),
 			levels = c("Fundamental","Nível Médio","Nível Superior"),
 			ordered = TRUE)
 
+======================================================================================
