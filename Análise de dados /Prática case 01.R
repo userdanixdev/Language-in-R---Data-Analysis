@@ -1,3 +1,6 @@
+** ATENÇÃO! Não foi realizado nenhum tratamento de dados no Excel ou em outra ferramentas como PowerBI.
++++++++ Os dados estão brutos e precisam ser tratados antes de utilizarmos o RStudio. ++++
+
 Análise de dados em R - Na Prática:
 
 	Definição do problema:
