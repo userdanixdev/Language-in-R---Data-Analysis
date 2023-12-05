@@ -1,0 +1,35 @@
+Machine Learning - Linguagem R -
+Random Forest : Algoritmo de aprendizado supervisionada ( dados rotulados )
+			- Baseado em conjunto de árvoes de decisão
+			- Muito utilizado por ser simples, rápido e eficiente.
+			- Pode ser utilizado em tarefas de classificação quanto de regressão.
+** Combina árvores de decisão , na maioria dos casos treinados como método.
+			- Usado para modelagem preditiva e NÃO DESCRITIVA
+Aplicações:
+	- Saúde: Analisar histórico médico de um paciente para identificar doenças.
+	- Financeiro: Determinar desempenho futuro de uma ação.
+	- E-commerce: Determinar se um cliente irá gostar do produto ou não.
+	- Bancário: Detectar clientes que irão usar serviços bancários. Ou clientes que irão pagar suas dívidas pontualmente, por exemplo.
+Exemplos práticos ou de uso comercial:
+Será que vai haver recessão?
+Será que o cliente vai gostar do produto?
+Será que o tratamento será eficaz?
+Será que este tomador de crédito vai me dar calote?
+Será que essa transação é fraudulenta?
+Caso TITANIC:
+	- MOtivos: Caso conhecido & bastante similiar aos negócios do dia a dia.
+			- Excelente para começar em ML para criação de modelos e para DATA SCIENCE para construção de features engenierns.
+
+Problema: Resolver o problema de classificação onde somente duas respostas são aceitáveis: SURVIVED OU NOT SURVIVED.
+	MÉTODO UTILIZADO: RANDOM FLOREST.
+
+Foco na criação do modelo ML e não na Ciência de dados.
+** Sugestão de data science: titulo do vídeo no youtube = 'Drenando o Titanic or DRAIN THE TITANIC'.
+*** Os dados estão no site do kaggle.com - imcompleto -
+
+Base de treino: Todos os dados e os sobreviventes. Dados completos. ( os dados rotulados )
+Base de teste: O modelo pronto vai usar essa base e criar a predição por probabilidades... NO caso não temos os sobreviventes, exatamente os dados
+				de sobrevivência que vamos predizer.
+Os dados são somente uma AMOSTRA.
+*** Foram mais de 1500 mortes ***
+==============================================================================================================================================================
