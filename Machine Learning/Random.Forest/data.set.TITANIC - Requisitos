@@ -21,7 +21,7 @@ Caso TITANIC:
 			- Excelente para começar em ML para criação de modelos e para DATA SCIENCE para construção de features engenierns.
 
 Problema: Resolver o problema de classificação onde somente duas respostas são aceitáveis: SURVIVED OU NOT SURVIVED.
-	MÉTODO UTILIZADO: RANDOM FLOREST.
+	MÉTODO UTILIZADO: RANDOM FOREST.
 
 Foco na criação do modelo ML e não na Ciência de dados.
 ** Sugestão de data science: titulo do vídeo no youtube = 'Drenando o Titanic or DRAIN THE TITANIC'.
