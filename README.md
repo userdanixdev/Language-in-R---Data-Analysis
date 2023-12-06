@@ -14,17 +14,5 @@ _Language for graphical and data analysis purposes_
 RSTUDIO. Boston: RStudio, c2020. Disponível em: https://rstudio.com/products/rstudio/download/. Acesso em: 10 ago. 2020.
 WIRTSCHAFTS UNIVERSITÄT WIEN. The Comprehensive R Archive Network. Wien: Institute for Statistics and Mathematics, 2020. Disponível em: https://cran.r-project.org/. Acesso em: 10 ago. 2020.
 
-# Link úteis de artigos científicos e acadêmicos:
 
-### Matéria sobre publicação de artigos e suas mudanças atuais:
-
-http://www.abc.org.br/2016/08/08/publicar-como-meio-e-nao-como-fim/
-***
-https://arxiv.org/  - Repositório de artigos  ( em Inglês )
-
-https://inspirehep.net/ - Repositoria também de artigos
-***
-### Vídeo sobre o método 'preprint' do repositório 'arxiv':
-https://www.youtube.com/watch?v=iDsiEwqgcjw
-***
 
