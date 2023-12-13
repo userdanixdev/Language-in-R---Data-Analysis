@@ -1,3 +1,4 @@
+***
 # __Language-in-R---Data Analysis__		![image](https://github.com/userdanixdev/Language-in-R---Data-Analysis/assets/132594952/b4c47ac5-3060-47ed-86d5-c58cdaa4bbc9)
 ***
 _Language for graphical and data analysis purposes_
@@ -13,6 +14,7 @@ _Language for graphical and data analysis purposes_
 ### References
 RSTUDIO. Boston: RStudio, c2020. Disponível em: https://rstudio.com/products/rstudio/download/. Acesso em: 10 ago. 2020.
 WIRTSCHAFTS UNIVERSITÄT WIEN. The Comprehensive R Archive Network. Wien: Institute for Statistics and Mathematics, 2020. Disponível em: https://cran.r-project.org/. Acesso em: 10 ago. 2020.
+***
 
 
 
