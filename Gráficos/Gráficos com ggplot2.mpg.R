@@ -1,3 +1,4 @@
+# VARIÁVEIS QUANTITATIVAS $
 ## Usando o dataset MPG = Milhas por galão- Consumo de carros - 
 ## Fuel economy data from 1999 to 2008 for 38 popular models of cars
 mpg
