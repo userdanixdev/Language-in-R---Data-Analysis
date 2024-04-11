@@ -1,7 +1,4 @@
-install.packages ggplot2   <--- Necessário instalar primeiro o pacote
-library ggplot2 
-
-
+## Para plotar gráficos nativos, não há necessidade de instalar nenhum pacote adicional
 # Exemplo 01:
   sexo = c('Masculino','Ferminino','Masculino','Ferminino','Masculino','Ferminino',
            'Masculino','Ferminino','Masculino','Ferminino','Masculino','Ferminino')
