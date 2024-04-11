@@ -18,3 +18,6 @@ ggplot(mpg) +
  theme_minimal() +
  theme(plot.title = element_text(size = 20L, hjust = 0.5), 
  plot.subtitle = element_text(face = "italic", hjust = 0.5))
+
+------------//-----------------//---------------------------//----------------//----------------//-------------------
+
