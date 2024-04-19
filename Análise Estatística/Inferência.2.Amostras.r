@@ -104,8 +104,87 @@ sample estimates:
   prop 1    prop 2 
 0.4233333 0.5200000 
 '''
+
 # Temos um p-value dentro do nível de significância = 0.01 então podemos rejeitar a hipotese nula
 # Não temos numero 0 no intervalo de confiança entao pouco provável que a diferença de proporçãopo sejam iguais
+
+------------//---------------------------//------------------------------//--------------------------
+
+# Suponha que, no estudo que deu origem a base de dados "habitoLeitura", 
+# o pesquisador queira testar as seguintes hipóteses, ao nível de confiança de 95%:
+
+#H0: A quantidade média anual de livros consumidos por uma pessoa que gosta de ler
+# é igual a quantidade média de livros consumidos por uma pessoa que não gosta de ler;
+
+#H1: A quantidade média anual de livros consumidos por uma pessoa que gosta de ler 
+# é diferente da quantidade média de livros consumidos por uma pessoa que não gosta de ler.
+
+# Nível de significância = 1,5,10 - Nível de confiança (90,95,99%)
+
+#p-value < nível de signifiCância, rejeita a hipótese nula
+# p-value > nível de significância, não rejeita a hipótese nula
+
+#nível de confiança de 95% com nível de significância de 5%
+
+library(readxl)
+habitoLeitura <- read_excel("C:/Users/jessi/Downloads/habitoLeitura.xlsx")
+View(habitoLeitura)
+
+library('Rcmdr')
+
+data:  QTDE by GOSTALER
+t = -5.0072, df = 33.921, p-value = 0.00001691
+alternative hypothesis: true difference in means between group Não and group Sim is not equal to 0
+95 percent confidence interval:
+  -9.669476 -4.086080
+sample estimates:
+  mean in group Não mean in group Sim 
+2.900000          9.777778 
+
+                                      #Problema de pesquisa:
+# O teste apresenta um p-value menor que 5%, há evidência para rejeitar a hipótese nula. (VERDADEIRO)
+
+# Uma diferença igual a zero não está no intervalo de confiança de 95%, 
+# portanto há evidência para rejeitar a hipótese nula, confirmando a hipótese de que as duas médias são diferentes. (VERDADEIRO)
+
+# O teste mostra que o consumo médio de livros por pessoas que gostam de ler é maior 
+# que o consumo médio de livros por pessoas que não gostam de ler, mas não há nenhuma
+# evidência estatística que esta diferença também pode ocorrer na população.  (FALSO)
+
+
+# Será que a proporção da preferência por e-books difere entre pessoas que gostam 
+# e não gostam de ler livros?
+
+
+# H0: A proporção da preferência por e-books é igual entre pessoas que gostam e não gostam de ler;
+# H1: A proporção da preferência por e-books difere entre pessoas que gostam e não gostam de ler.
+
+                          # PROBLEMAS:
+
+# A proporção de pessoas da amostra que não gostam de ler mas, 
+ # quando necessário, preferem e-books, é de 20%. (VERDADEIRO)
+
+# Com p-value menor que 5%, não há evidência para rejeitar a hipótese nula. (FALSO)
+
+# Uma diferença igual a zero está dentro do intervalo de confiança de 95%. 
+ # Portanto, não há evidência para rejeitar a hipótese nula. (VERDADEIRO)
+
+'''
+GOSTALER E-books Livro físico Total Count
+Não    20.0         80.0   100    10
+Sim    18.5         81.5   100    27
+
+2-sample test for equality of proportions without continuity correction
+
+data:  .Table
+X-squared = 0.010441, df = 1, p-value = 0.9186
+alternative hypothesis: two.sided
+95 percent confidence interval:
+  -0.2731637  0.3027934
+sample estimates:
+  prop 1    prop 2 
+0.2000000 0.1851852 
+'''
 
 
 
