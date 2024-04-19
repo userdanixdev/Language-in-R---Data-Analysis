@@ -64,4 +64,48 @@ sample estimates:
   mean difference 
 -50.6 
 '''
+===========/=/===========================//===============================//=============================
+
+
+# Teste de diferença de proporções:
+ # Montadora pretende comparar o potencial de mercado  das regiões norte e sul
+# Perguntou para 300 pessoas
+
+# TESTE DE HIPÓTESES 1 = nula:
+    # A proporção de pessoas que responderam sim é igual em ambas as regiões
+# TESTE DE HIPÓTESE 2 = ALTERNATIVA:
+  #  A proporção de pessoas que responderam sim difere entre as regiões
+
+# IMPORTAÇÃO DOS DADOS A SEREM INFERIDOS:
+library(readxl)
+automoveis <- read_excel("C:/Users/jessi/Downloads/automoveis.xlsx", 
+                         sheet = "Base3")
+
+library('Rcmdr')
+
+# Nível de significância = 1,5,10 - Nível de confiança (90,95,99%)
+
+#p-value < nível de signifiCância, rejeita a hipótese nula
+# p-value > nível de significância, não rejeita a hipótese nula
+'''
+
+Percentage table:
+       Resposta
+Regiao   Nao  Sim Total Count
+  Norte 42.3 57.7   100   300
+  Sul   52.0 48.0   100   300
+  
+data:  .Table
+X-squared = 5.6247, df = 1, p-value = 0.01771
+alternative hypothesis: two.sided
+95 percent confidence interval:
+  -0.17617796 -0.01715538
+sample estimates:
+  prop 1    prop 2 
+0.4233333 0.5200000 
+'''
+# Temos um p-value dentro do nível de significância = 0.01 então podemos rejeitar a hipotese nula
+# Não temos numero 0 no intervalo de confiança entao pouco provável que a diferença de proporçãopo sejam iguais
+
+
 
