@@ -22,4 +22,11 @@ alternative hypothesis: true mean is not equal to 40
 sample estimates:
 mean of x 
        37 
+
+
+# p-value < nível de significância, rejeita a hipótese nula
+# p-value > nível de significância, não rejeita a hipótese nula
+
+# Ao nível de significância de 5% (ou ao nível de confiança de 95%), 
+# não há evidência estatística para rejeitar a hipótese nula.
 --------------//--------------------//---------------------//---------------------//---------
