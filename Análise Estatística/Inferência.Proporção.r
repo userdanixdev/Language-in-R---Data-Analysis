@@ -30,6 +30,15 @@ alternative hypothesis: true p is less than 0.5
 ----------//---------------//------------------//----------------//
 
 
+X-squared = 2.1333, df = 1, p-value = 0.07206
+alternative hypothesis: true p is less than 0.5
+90 percent confidence interval:
+ 0.0000000 0.4835928
+
+# Com nível de confiança de 90 % e um nível de confiança de 10% a hipótese nula poderia ser rejeitada conforme os dados acima.
+
+
+
 
 
 
