@@ -85,6 +85,39 @@ sample estimates:
 regressao = lm(formula=ACUR~logVM, data=analistaMC)
 bptest(regressao)
 
+library(lmtest)
+studentized Breusch-Pagan test
+
+data:  regressao
+BP = 7.2487, df = 1, p-value = 0.007095
+
+# Com p-value menor que 1% nós rejeitamos  a hipótese nula = 0.007095
+# configurando heteroscedasticidade
+
+# NORMALIDADE:
+
+Shapiro-Wilk normality test
+
+data:  residuos
+W = 0.58026, p-value < 2.2e-16
+
+# Rejeitamos a hipótese nula com um p-value muito baixo, sendo assim, os resíduos não estão sendo distribuidos 
+# conforme distribuição normal.
+
+# AUTOCORRELAÇÃO:
+
+ibrary(DescTools)
+DurbinWatsonTest(regressao)
+
+Durbin-Watson test
+
+data:  regressao
+DW = 1.785, p-value = 0.0002659
+alternative hypothesis: true autocorrelation is greater than 0
+
+# Há evidência para rejeitar a hipótese nula com um p-value muito pequeno, menos de 1%.
+
+
 
 
 
