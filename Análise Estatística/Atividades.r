@@ -50,7 +50,7 @@ F-statistic: 46.78 on 1 and 1031 DF,  p-value: 1.357e-11
 
  # Ao nível de significância de 10%, não há evidência da relação entre as variáveis logVM e ACUR, 
 # portando, não há evidência de que a acurácia dos analistas possa aumentar conforme 
-# o aumento do tamanho da empresa. [VERDADEIRO]
+# o aumento do tamanho da empresa. [FALSO]
 
 # A inclinação de logVM (Estimate) é positiva, mostrando que, pela aplicação do modelo de regressão linear, 
 # a acurácia (ACUR) aumenta quando o tamanho da empresa (logVM) aumenta.[VERDADEIRO]
