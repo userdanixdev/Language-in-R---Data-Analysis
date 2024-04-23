@@ -46,7 +46,7 @@ F-statistic: 46.78 on 1 and 1031 DF,  p-value: 1.357e-11
 # Questão 02:
 
 # O modelo de regressão se mostra estatísticamente útil para explicar as variações na variável ACUR
-# uma vez que p-value é menor que 1%.[VERDADEIRO][MOSTRA QUE NÃO RELAÇÃO ENTRE AS VARIÁVEIS]
+# uma vez que p-value é menor que 1%.[VERDADEIRO][MOSTRA QUE NÃO HÁ RELAÇÃO ENTRE AS VARIÁVEIS]
 
  # Ao nível de significância de 10%, não há evidência da relação entre as variáveis logVM e ACUR, 
 # portando, não há evidência de que a acurácia dos analistas possa aumentar conforme 
@@ -82,7 +82,7 @@ sample estimates:
 
 # Homoscedasticidade ( Igualdade das variâncias):
 
-regressao = lm(formula=ACUR~logVM, data=analistaMC)
+regressao = lm(formula=ACUR~logVM, data=analistasMC)
 bptest(regressao)
 
 library(lmtest)
@@ -91,7 +91,7 @@ studentized Breusch-Pagan test
 data:  regressao
 BP = 7.2487, df = 1, p-value = 0.007095
 
-# Com p-value menor que 1% nós rejeitamos  a hipótese nula = 0.007095
+# Com p-value menor que 1% nós rejeitamos a hipótese nula = 0.007095
 # configurando heteroscedasticidade
 
 # NORMALIDADE:
