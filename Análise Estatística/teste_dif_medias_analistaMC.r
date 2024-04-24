@@ -23,7 +23,7 @@ sample estimates:
 mean in group A partir de 2008    mean in group Antes de 2008 
                     -0.7521873                     -0.7269017 
 
-O p-value é maior que 5%, indicando que a hipótese nula deve ser rejeitada.[FALSO] Indica que a hipótese nula não deve ser rejeitada.
+O p-value é maior que 5%, indicando que a hipótese nula deve ser rejeitada.[VERDADEIRO] 
 
 O número zero não aparece no intervalo de confiança, motivo pelo qual a hipótese nula deve ser rejeitada. [FALSO]
 [INDICANDO QUE A HIPÓTESE NULA NÃO DEVE SER REJEITADA]
