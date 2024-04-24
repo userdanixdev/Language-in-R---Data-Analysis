@@ -28,6 +28,93 @@ O p-value é maior que 5%, indicando que a hipótese nula deve ser rejeitada.[FA
 O número zero não aparece no intervalo de confiança, motivo pelo qual a hipótese nula deve ser rejeitada. [FALSO]
 [INDICANDO QUE A HIPÓTESE NULA NÃO DEVE SER REJEITADA]
 
+#################################
+# Um possível problema de pesquisa para a base de dados "analistasMC" poderia ser:
+# "Será que a média da acurácia dos analistas difere entre empresas que possuem suas ações negociadas em diferentes quantidades de países?".
+# Ou seja, um pesquisador poderia testar as seguintes hipóteses:
+
+H0: A média da acurácia (variável ACUR) é igual entre empresas que possuem suas ações negociadas em 1, 2, 3 ou mais que 3 países;
+H0: A média da acurácia difere entre empresas que possuem suas ações negociadas em, pelo menos, duas quantidades diferentes de países.
+
+# Supondo que os dados são independentes e que foram coletados aleatoriamente, 
+# resta ao pesquisador verificar, antes de rodar o teste F Anova, se as premissas da normalidade e da homogeneidade das variâncias 
+# foram atendidas.
+
+a) Para verificar a premissa da normalidade, execute os seguintes comandos no R:
+
+library(RcmdrMisc)
+normalityTest(ACUR ~ as.factor(NPAIS), test="shapiro.test", data = analistasMC)
+
+as.factor(NPAIS) = 1 país 
+
+	Shapiro-Wilk normality test
+
+data:  ACUR
+W = 0.55569, p-value < 2.2e-16
+
+ --------
+ as.factor(NPAIS) = 2 países 
+
+	Shapiro-Wilk normality test
+
+data:  ACUR
+W = 0.54875, p-value < 2.2e-16
+
+ --------
+ as.factor(NPAIS) = 3 países 
+
+	Shapiro-Wilk normality test
+
+data:  ACUR
+W = 0.35695, p-value < 2.2e-16
+
+ --------
+ as.factor(NPAIS) = Mais que 3 países 
+
+	Shapiro-Wilk normality test
+
+data:  ACUR
+W = 0.61796, p-value = 0.00001025
+
+ --------
+
+ p-values adjusted by the Holm method:
+                  unadjusted  adjusted   
+1 país            < 2.22e-16  < 2.22e-16 
+2 países          < 2.22e-16  < 2.22e-16 
+3 países          < 2.22e-16  < 2.22e-16 
+Mais que 3 países 0.000010252 0.000010252
+
+# Os resultados indicam que a distribuição da acurácia é normal para mais que 3 países.
+
+b) Para verificar a premissa da igualdade das variâncias, execute o seguinte comando no R:
+
+leveneTest(ACUR ~ as.factor(NPAIS), data=analistasMC, center="median")
+
+Levene's Test for Homogeneity of Variance (center = "median")
+        Df F value Pr(>F)
+group    3  1.0313 0.3779
+      1029               
+
+O resultado traz evidências de que as variâncias são IGUAIS.
+
+# Depois de checar as premissas, o pesquisador pode testar as hipóteses da pesquisa. Para fins didáticos,
+# considere que os dados atendem as premissas da distribuição normal e da igualdade das variâncias,
+# independente dos resultados obtidos nas questões anteriores.
+
+summary(aov(ACUR ~ as.factor(NPAIS), data = analistasMC))
+                   Df Sum Sq Mean Sq F value Pr(>F)
+as.factor(NPAIS)    3    7.8   2.586   1.499  0.213
+Residuals        1029 1774.6   1.725               
+
+
+Para um nível de confiança de 95%, há evidências para não rejeitar a hipótese nula, uma vez que p-value é maior que o nível de significância.
+
+
+
+
+
+
 
 
 
