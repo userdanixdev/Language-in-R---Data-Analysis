@@ -73,6 +73,19 @@ partes <- list(
 max_len <- max(sapply(partes, length))
 partes <- lapply(partes, function(x) c(x, rep(NA, max_len - length(x))))
 
+'''
+max_len <- max(sapply(partes, length)):
+sapply(partes, length): Isso calcula o comprimento de cada parte.
+max(): Retorna o comprimento máximo encontrado.
+max_len armazena o comprimento máximo entre todas as partes.
+partes <- lapply(partes, function(x) c(x, rep(NA, max_len - length(x)))):
+lapply(partes, ...) aplica a função a todas as partes da lista.
+A função function(x) c(x, rep(NA, max_len - length(x))) é aplicada a cada parte individualmente:
+x é cada parte.
+rep(NA, max_len - length(x)) cria um vetor de NA com o comprimento necessário para igualar ao max_len - length(x) (ou seja, a diferença entre o comprimento máximo e o comprimento atual da parte).
+c(x, ...) combina a parte atual com o vetor de NA, preenchendo as partes com NA para igualar ao comprimento máximo.
+Isso resulta em todas as partes tendo o mesmo comprimento, preenchendo com NA onde necessário.      '''           
+
 # Criar o dataframe com as partes como colunas
 partes_df <- as.data.frame(partes)
 
