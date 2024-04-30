@@ -1,12 +1,16 @@
+# A documentação feita aqui nesse repositório tem por objetivo os estudos realizados do dataset matcars
 # Manipulação de dados nativa do R:
 # Criando uma tabela agrupada dos carros pela distribuição de frequência:
+library(dplyr)
+mpg = select(mtcars,mpg)
+mpg = arrange (mpg,mpg)
 mpg$index = rownames(mpg)
 coluna_indice = mpg$index
 coluna_indice
 
-# Dividir a coluna de índices em 7 partes iguais proporcional ao intervalo de classe e a amplitude
+# Dividir a coluna de índices em 7 partes proporcionis ao intervalo de classe :
 
-partes7_32_4 <- list(
+partes <- list(
   coluna_indice[1:3],
   coluna_indice[4:12],
   coluna_indice[13:22],
@@ -15,37 +19,27 @@ partes7_32_4 <- list(
   coluna_indice[29:31],
   coluna_indice[32]
 )
-partes7_32_4
-# Nos mostra a lista com as 7 partes
+# Nos mostra a lista com as 7 partes de maneira organizada:
 for (i in 1:7) {
-  cat("Parte", i, ":", partes7_32_4[[i]], "\n")
+  cat("Parte", i, ":", partes[[i]], "\n")
 }
-
-
-
-# Criar o dataframe com as partes como colunas:
-partes_df_2 = data.frame(
-  Parte1 = rep(NA, max(sapply(partes7_32_4, length))),
-  Parte2 = rep(NA, max(sapply(partes7_32_4, length))),
-  Parte3 = rep(NA, max(sapply(partes7_32_4, length))),
-  Parte4 = rep(NA, max(sapply(partes7_32_4, length))),
-  Parte5 = rep(NA, max(sapply(partes7_32_4, length))),
-  Parte6 = rep(NA, max(sapply(partes7_32_4, length))),
-  Parte7 = rep(NA, max(sapply(partes7_32_4, length)))
+# Criar o dataframe com as partes em colunas:
+partes_df = data.frame(
+  Parte1 = rep(NA, max(sapply(partes, length))),
+  Parte2 = rep(NA, max(sapply(partes, length))),
+  Parte3 = rep(NA, max(sapply(partes, length))),
+  Parte4 = rep(NA, max(sapply(partes, length))),
+  Parte5 = rep(NA, max(sapply(partes, length))),
+  Parte6 = rep(NA, max(sapply(partes length))),
+  Parte7 = rep(NA, max(sapply(partes, length)))
 )
-  
-partes_df_2
 # Preencher o data.frame com os valores nas partes:
 for (i in 1:7) {
-  partes_df[1:length(partes7_32_4[[i]]), i] <- partes7_32_4[[i]]
+  partes_df[1:length(partes[[i]]), i] <- partes[[i]]
 }
 # Renomear as colunas :
-partes_df
-colnames(partes_df)= classes
-?sapply
-partes_df
 classes=c('10-14(mpg)','14-18(mpg)','18-22(mpg)','22-26(mpg)','26-30(mpg)','30-34(mpg)','34-38(mpg)')
-
+colnames(partes_df)= classes
 
 ---------//-----------------//---------------//----------------------
 # Manipulação de dados na linguagem R com o pacote dplyr ( opcional )
