@@ -1,6 +1,57 @@
-# A documentação feita aqui nesse repositório tem por objetivo os estudos realizados do dataset matcars
+# A documentação feita aqui nesse repositório tem por objetivo os estudos realizados do dataset matcars ::
+#Ordenação e isolamento da variável em questão mpg de mtcars::
+library(dplyr)
+mpg = select(mtcars,mpg)
+mpg = arrange (mpg,mpg)
+print(mpg)
+# Puxando informações estatísticas da variável:
+numSummary(mpg,statistics=c('mean','quantiles'),quantiles=c(0,.25,.5,.75,1))
+# Formatando a distribuição de frequência:
+summary(factor(,mpg))
+mpg= c(10.4, 10.4, 13.3, 14.3, 14.7, 15, 15.2, 15.2, 15.5, 15.8, 
+       16.4, 17.3, 17.8, 18.1, 18.7, 19.2, 19.2, 19.7, 21, 21,
+       21.4, 21.4, 21.5, 22.8, 22.8, 24.4, 26, 27.3, 30.4, 30.4, 32.4, 33.9) 
+# Arrendomento da variável mpg:
+mpg = round(mpg)
+# Criação de um rol dos número por meio da uma matrix ( boa prática ):
+mpg = matrix(mpg,nrow=4,ncol=8,byrow = TRUE)
+# Amplitude total:
+  34-10=24
+# Intervalo de classe:
+  1 + 3.3 * 1.5 = 6
+# Amplitude de classe:
+  24 / 6 = 4
+# Intervalos de classe:
+inter_cl <- seq(10,38,4)
+# Extrair a frequência:
+classes_frequencia =  table(cut(mpg,breaks=inter_cl,right=FALSE))
+# Frequência:
+frequencia = c(3,9,10,4,2,3,1)
+# Vetores do intervalo de classes para composição da tabela de distribuição de frequência:
+classes=c('10-14','14-18','18-22','22-26','26-30','30-34','34-38')
+# Frequência relativa:
+frequencia_relativa = prop.table(frequencia)
+# Frequência relativa percentual:
+frequencia_relativa_perc = frequencia_relativa*100
+# Criação da tabela de distribuição de frequência:
+mtcars_mpg = data.frame(classes,frequencia,frequencia_relativa,frequencia_relativa_perc)
+# Plot gráfico da distribuição de frequência com o pacote ggplot2:
+library(ggplot2)
+ggplot(mtcars_mpg) +
++  aes(x = classes, y = frequencia, fill = classes) +
++  geom_col() +
++  scale_fill_manual(values = c(`10-14` = "#058BDE", 
++ `14-18` = "#03324F", `18-22` = "#03324F", `22-26` = "#6BAED6", `26-30` = "#3787C0", `30-34` = "#105BA4", 
++ `34-38` = "#89B0EA")) +
++  labs(title = "Distribuição de Classes & Frequência", subtitle = "Variável mpg", 
++  fill = "Legenda",x = 'MPG - MILHAS POR GALÃO',y='Quantidade de automóveis') +
++  coord_flip() +
++  theme_minimal() +
++  theme(plot.title = element_text(size = 20L, 
++  hjust = 0.5), plot.subtitle = element_text(size = 13L, hjust = 0.5))
+
 # Manipulação de dados nativa do R:
-# Criando uma tabela agrupada dos carros pela distribuição de frequência:
+# Criando uma tabela agrupada dos carros:
 library(dplyr)
 mpg = select(mtcars,mpg)
 mpg = arrange (mpg,mpg)
