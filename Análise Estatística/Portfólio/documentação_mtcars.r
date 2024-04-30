@@ -57,7 +57,7 @@ mpg = select(mtcars,mpg)
 mpg = arrange (mpg,mpg)
 mpg$index = rownames(mpg)
 coluna_indice = mpg$index
-coluna_indice
+print(coluna_indice)
 
 # Dividir a coluna de índices em 7 partes proporcionis ao intervalo de classe :
 
