@@ -37,7 +37,6 @@ frequencia_relativa_perc = frequencia_relativa*100
 mtcars_mpg = data.frame(classes,frequencia,frequencia_relativa,frequencia_relativa_perc)
 # Plot gráfico da distribuição de frequência com o pacote ggplot2:
 library(ggplot2)
-# Plotar o gráfico de barras com cores em gradiente
 ggplot(mtcars_mpg) +
   aes(x = reorder(classes, -frequencia), y = frequencia, fill = frequencia) +
   geom_col() +
@@ -55,6 +54,24 @@ ggplot(mtcars_mpg) +
         plot.subtitle = element_text(size = 13, hjust = 0.5),
         axis.text.x = element_text(angle = 0, vjust = 0.5),  # Ajustando orientação dos rótulos do eixo x
         legend.position = "none")  # Removendo a legenda
+# Plot gráfico da distribuição de frequência em barras nativo do R:
+barplot(mtcars_mpg$frequencia, 
+        main = "Distribuição de Classes & Frequência",
+        sub = "Variável mpg",
+        xlab = 'MPG - MILHAS POR GALÃO',
+        ylab = 'Quantidade de automóveis',
+        col = colorRampPalette(c("#CCCCCC", "#CCCCCC"))(nrow(mtcars_mpg)),
+        ylim = range(0:12),
+        names.arg = mtcars_mpg$classes,
+        cex.names = 0.8,  # Reduzir o tamanho dos rótulos do eixo x
+        las = 1)  # Rótulos do eixo x na vertical = 1 na horizontal = 2
+
+# Adicionar texto com a porcentagem dentro das barras
+text(x = barplot(mtcars_mpg$frequencia, plot = FALSE),
+     y = mtcars_mpg$frequencia,
+     labels = paste0(round(mtcars_mpg$porcentagem), "%"),
+     pos = 3,  # Posição do texto
+     cex = 0.7)  # Tamanho do texto
 
 # Manipulação de dados nativa do R:
 # Criando uma tabela agrupada dos carros:
