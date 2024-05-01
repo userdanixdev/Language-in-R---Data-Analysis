@@ -36,7 +36,9 @@ frequencia_relativa_perc = frequencia_relativa*100
 # Criação da tabela de distribuição de frequência:
 mtcars_mpg = data.frame(classes,frequencia,frequencia_relativa,frequencia_relativa_perc)
 # Plot gráfico da distribuição de frequência com o pacote ggplot2:
+library(esquisse)
 library(ggplot2)
+esquisser(mtcars_mpg)
 ggplot(mtcars_mpg) +
   aes(x = reorder(classes, -frequencia), y = frequencia, fill = frequencia) +
   geom_col() +
