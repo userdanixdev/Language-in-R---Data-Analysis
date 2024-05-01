@@ -72,6 +72,20 @@ text(x = barplot(mtcars_mpg$frequencia, plot = FALSE),
      labels = paste0(round(mtcars_mpg$porcentagem), "%"),
      pos = 3,  # Posição do texto
      cex = 0.7)  # Tamanho do texto
+# Plot gráfico de Marimekko com ggplot para distribuição em proporção da variável mpg:
+library(ggplot2)
+# Criar o gráfico de Marimekko
+ggplot(mtcars_mpg, aes(x = "", y = frequencia_relativa_perc, fill = classes)) +
+  geom_bar(stat = "identity", color = "black") +
+  geom_text(aes(label = paste0(frequencia_relativa_perc, "%")),
+            position = position_stack(vjust = 0.5), size = 3) +
+  labs(title = "Gráfico Marimekko para Distribuição de MPG",
+       x = NULL,
+       y = 'Quartis',
+       fill = "Classes de MPG") +
+  scale_fill_manual(values = rainbow(nrow(mtcars_mpg), start = 0.2, end = 0.8)) +
+  theme_minimal() +
+  theme(legend.position = "bottom")  # Posicionar a legenda na parte inferior
 
 # Manipulação de dados nativa do R:
 # Criando uma tabela agrupada dos carros:
