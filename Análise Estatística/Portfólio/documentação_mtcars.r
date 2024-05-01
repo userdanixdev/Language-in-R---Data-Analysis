@@ -6,6 +6,28 @@ mpg = arrange (mpg,mpg)
 print(mpg)
 # Puxando informações estatísticas da variável:
 numSummary(mpg,statistics=c('mean','quantiles'),quantiles=c(0,.25,.5,.75,1))
+# Boxplot da variável mpg de mtcars para quartis e mediana:
+boxplot(mtcars$mpg,
+        main = "Boxplot da Variável MPG",
+        ylab = "MPG - Milhas por Galão",
+        col = "skyblue",
+        border = "black",
+        yaxt = 'n')
+
+# Adicionar linhas para os quartis
+quartis <- quantile(mtcars$mpg, probs = c(0,0.25, 0.5, 0.75,1))
+abline(h = quartis, col = c("blue","blue", "yellow", "red",'red'), lty = 2)
+
+# Criar uma legenda
+legend("topright",legend=c("Q4","Q3","Q2-Mediana","Q1"),
+       col=c('red','red','yellow','blue'),lty=2,
+        bty = 'n', cex=0.8)   
+
+# Definir os intervalos do eixo y de 4 em 4 - OPCIONAL
+axis(2, at = seq(10, 38, by = 4))
+# Adicionar rótulos dos quartis no eixo y
+axis(2, at = quartis, labels = floor(quartis))  
+
 # Formatando a distribuição de frequência:
 summary(factor(,mpg))
 mpg= c(10.4, 10.4, 13.3, 14.3, 14.7, 15, 15.2, 15.2, 15.5, 15.8, 
