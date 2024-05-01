@@ -91,6 +91,11 @@ for (i in 1:7) {
 # Renomear as colunas :
 classes=c('10-14(mpg)','14-18(mpg)','18-22(mpg)','22-26(mpg)','26-30(mpg)','30-34(mpg)','34-38(mpg)')
 colnames(partes_df)= classes
+print(partes_df)
+# Remover as linhas que contêm <NA>:
+clean_df <- partes_df
+clena_df [is.na(clean_df)] <- ''
+print(clean_df)
 
 ---------//-----------------//---------------//----------------------
 # Manipulação de dados na linguagem R com o pacote dplyr ( opcional )
