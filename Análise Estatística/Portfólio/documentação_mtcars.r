@@ -37,18 +37,24 @@ frequencia_relativa_perc = frequencia_relativa*100
 mtcars_mpg = data.frame(classes,frequencia,frequencia_relativa,frequencia_relativa_perc)
 # Plot gráfico da distribuição de frequência com o pacote ggplot2:
 library(ggplot2)
+# Plotar o gráfico de barras com cores em gradiente
 ggplot(mtcars_mpg) +
-+  aes(x = classes, y = frequencia, fill = classes) +
-+  geom_col() +
-+  scale_fill_manual(values = c(`10-14` = "#058BDE", 
-+ `14-18` = "#03324F", `18-22` = "#03324F", `22-26` = "#6BAED6", `26-30` = "#3787C0", `30-34` = "#105BA4", 
-+ `34-38` = "#89B0EA")) +
-+  labs(title = "Distribuição de Classes & Frequência", subtitle = "Variável mpg", 
-+  fill = "Legenda",x = 'MPG - MILHAS POR GALÃO',y='Quantidade de automóveis') +
-+  coord_flip() +
-+  theme_minimal() +
-+  theme(plot.title = element_text(size = 20L, 
-+  hjust = 0.5), plot.subtitle = element_text(size = 13L, hjust = 0.5))
+  aes(x = reorder(classes, -frequencia), y = frequencia, fill = frequencia) +
+  geom_col() +
+  scale_fill_gradient(low = "#FF0000", high = "#00FF00") +  # Cores em gradiente
+  labs(title = "Distribuição de Classes & Frequência", 
+       subtitle = "Variável mpg",
+       x = 'MPG - MILHAS POR GALÃO',
+       y = 'Quantidade de automóveis') +
+  scale_y_continuous(breaks = seq(0, 10, by = 1)) +  # Intervalos de 1 unidade no eixo y
+  geom_text(aes(label = paste0(round(porcentagem), "%")), # Especifica que o texto a ser exibido é em percen
+            position = position_stack(vjust = 0.5), size = 3) +  # Define a posição do texto dentro das barras
+  coord_flip() +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 20, hjust = 0.5),
+        plot.subtitle = element_text(size = 13, hjust = 0.5),
+        axis.text.x = element_text(angle = 0, vjust = 0.5),  # Ajustando orientação dos rótulos do eixo x
+        legend.position = "none")  # Removendo a legenda
 
 # Manipulação de dados nativa do R:
 # Criando uma tabela agrupada dos carros:
