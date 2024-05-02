@@ -41,11 +41,12 @@ mpg_matrix = round(mpg_matrix)
 print(mpg_matrix)
 # Amplitude Total:
   # A amplitude total é a diferença entre o maior e o menor valor em um conjunto de dados.
-calc_amplitude_total <- function(mpg) {
-  amplitude_total <- max(mpg) - min(mpg)
-  return(amplitude_total)
+calc_amplitude_total <- function(mpg_matrix) {
+  amplitude_total <- max(mpg_matrix) - min(mpg_mtrix)
+  mensangem <- paste('O resultado da amplitude total é:',amplitude_total)                
+  return(mensagem)
 }
-amplitude_total = calc_amplitude_total(mpg)
+amplitude_total = calc_amplitude_total(mpg_matrix)
 print(amplitude_total)
 # Intervalo de classe:
 calc_intervalos_sturges <- function(mpg) {
