@@ -73,7 +73,7 @@ frequencia_absoluta <- as.numeric(table(intervalos))
 # Calculando frequência relativa:
 freq_relativa = prop.table(frequencia_absoluta)
 print(freq_relativa)
-# Calculando frequência relativa_perc:
+# Calculando frequência relativa percentual (porcentagem):
 freq_relativa_perc = prop.table(frequencia_absoluta)*100
 print(freq_relativa_perc)
 # Criação da tabela de distribuição de frequência:
