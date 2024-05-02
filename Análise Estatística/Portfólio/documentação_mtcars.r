@@ -49,14 +49,15 @@ calc_amplitude_total <- function(mpg_matrix) {
 amplitude_total = calc_amplitude_total(mpg_matrix)
 print(amplitude_total)
 # Intervalo de classe:
-calc_intervalos_sturges <- function(mpg) {
-        n <- length(mpg) # Tamanho de amostra
+calc_intervalos_sturges <- function(mpg_matrix) {
+        n <- length(mpg_matrix) # Tamanho de amostra
         k <- 1 + 3.3 * log10(n) # - Número de intervalos de classe (Método de Sturges)
         k <- round(k) # Arredondando para o número inteiro mais próximo
-        return(k)
+        mensagem <- paste('O resultado do intervalo de classe pelo método Sturgers é:',k)
+        return(mensagem)
       }
-      # Aplicar a função aos dados
-      num_intervalos <- calc_intervalos_sturges(mpg)
+      # Declarar uma variável com o número de intervalos pois usaremos para quebrar a matriz
+      num_intervalos <- calc_intervalos_sturges(mpg_matrix)
       print(num_intervalos)
 # Amplitude de classe:
 amplitude_classe = amplitude_total / quantidade_intervalos        
