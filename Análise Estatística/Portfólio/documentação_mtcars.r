@@ -37,12 +37,28 @@ mpg= c(10.4, 10.4, 13.3, 14.3, 14.7, 15, 15.2, 15.2, 15.5, 15.8,
 mpg = round(mpg)
 # Criação de um rol dos número por meio da uma matrix ( boa prática ):
 mpg = matrix(mpg,nrow=4,ncol=8,byrow = TRUE)
-# Amplitude total:
-  34-10=24
+# Amplitude Total:
+  # A amplitude total é a diferença entre o maior e o menor valor em um conjunto de dados.
+calc_amplitude_total <- function(mpg) {
+  amplitude_total <- max(mpg) - min(mpg)
+  return(amplitude_total)
+}
+amplitude_total = calc_amplitude_total(mpg)
+print(amplitude_total)
 # Intervalo de classe:
-  1 + 3.3 * 1.5 = 6
+calc_intervalos_sturges <- function(mpg) {
+        n <- length(mpg) # Tamanho de amostra
+        k <- 1 + 3.3 * log10(n) # - Número de intervalos de classe (Método de Sturges)
+        k <- round(k) # Arredondando para o número inteiro mais próximo
+        return(k)
+      }
+      # Aplicar a função aos dados
+      num_intervalos <- calc_intervalos_sturges(mpg)
+      print(num_intervalos)
 # Amplitude de classe:
-  24 / 6 = 4
+amplitude_classe = amplitude_total / quantidade_intervalos        
+print(amplitude_classe)
+******
 # Intervalos de classe:
 inter_cl <- seq(10,38,4)
 # Extrair a frequência:
