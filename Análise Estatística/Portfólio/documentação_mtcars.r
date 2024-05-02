@@ -4,6 +4,7 @@ library(dplyr)
 mpg = select(mtcars,mpg)
 mpg = arrange (mpg,mpg)
 print(mpg)
+
 # Puxando informações estatísticas da variável:
 numSummary(mpg,statistics=c('mean','quantiles'),quantiles=c(0,.25,.5,.75,1))
 # Boxplot da variável mpg de mtcars para quartis e mediana:
@@ -17,26 +18,27 @@ boxplot(mtcars$mpg,
 # Adicionar linhas para os quartis
 quartis <- quantile(mtcars$mpg, probs = c(0,0.25, 0.5, 0.75,1))
 abline(h = quartis, col = c("blue","blue", "yellow", "red",'red'), lty = 2)
+                # Criar uma legenda
+                legend("topright",legend=c("Q4","Q3","Q2-Mediana","Q1"),
+                       col=c('red','red','yellow','blue'),lty=2,
+                        bty = 'n', cex=0.8)   
 
-# Criar uma legenda
-legend("topright",legend=c("Q4","Q3","Q2-Mediana","Q1"),
-       col=c('red','red','yellow','blue'),lty=2,
-        bty = 'n', cex=0.8)   
-
-# Definir os intervalos do eixo y de 4 em 4 - OPCIONAL
-axis(2, at = seq(10, 38, by = 4))
-# Adicionar rótulos dos quartis no eixo y
-axis(2, at = quartis, labels = floor(quartis))  
+                # Definir os intervalos do eixo y de 4 em 4 - OPCIONAL
+                axis(2, at = seq(10, 38, by = 4))
+                # Adicionar rótulos dos quartis no eixo y
+                axis(2, at = quartis, labels = floor(quartis))  
 
 # Formatando a distribuição de frequência:
-summary(factor(,mpg))
-mpg= c(10.4, 10.4, 13.3, 14.3, 14.7, 15, 15.2, 15.2, 15.5, 15.8, 
-       16.4, 17.3, 17.8, 18.1, 18.7, 19.2, 19.2, 19.7, 21, 21,
-       21.4, 21.4, 21.5, 22.8, 22.8, 24.4, 26, 27.3, 30.4, 30.4, 32.4, 33.9) 
-# Arrendomento da variável mpg:
-mpg = round(mpg)
-# Criação de um rol dos número por meio da uma matrix ( boa prática ):
-mpg = matrix(mpg,nrow=4,ncol=8,byrow = TRUE)
+is.data.frame(mpg) # Deve ser true
+mpg_matrix = as.matrix(mpg) # Converter como uma matriz
+# Verificação do tipo de estrutura:
+is.data.frame(mpg_matrix)
+is.matrix(mpg_matrix)
+# Converter em uma matriz em formato ROL
+mpg_matrix = matrix(mpg_matrix,nrow=4,ncol=8,byrow = TRUE)
+# Arredondar a variável:
+mpg_matrix = round(mpg_matrix)
+print(mpg_matrix)
 # Amplitude Total:
   # A amplitude total é a diferença entre o maior e o menor valor em um conjunto de dados.
 calc_amplitude_total <- function(mpg) {
