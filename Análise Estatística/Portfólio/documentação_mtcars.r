@@ -42,7 +42,7 @@ print(mpg_matrix)
 # Amplitude Total:
   # A amplitude total é a diferença entre o maior e o menor valor em um conjunto de dados.
 calc_amplitude_total <- function(mpg_matrix) {
-  amplitude_total <- max(mpg_matrix) - min(mpg_mtrix)
+  amplitude_total <- max(mpg_matrix) - min(mpg_matrix)
   return(amplitude_total)
 }
 amplitude_total = calc_amplitude_total(mpg_matrix)
@@ -58,20 +58,20 @@ calc_intervalos_sturges <- function(mpg_matrix) {
       num_intervalos <- calc_intervalos_sturges(mpg_matrix)
       print(num_intervalos)
 # Amplitude de classe:
-amplitude_classe = amplitude_total / quantidade_intervalos        
+amplitude_classe = amplitude_total / num_intervalos        
 print(amplitude_classe)
 ******
 # Verificação da distribuição dos valores sem os invervalos:
-summary(factor(mpg))
+summary(factor(mpg_matrix))
 # Dividindo os intervalos:
 intervalos <- cut(mpg, breaks = num_intervalos, include.lowest = TRUE,right = FALSE)
 print(summary(intervalos))
-intervalos <- names(table(cut(mpg, breaks = num_intervalos, include.lowest = TRUE,right = FALSE)))
+intervalos <- names(table(cut(mpg_matrix, breaks = num_intervalos, include.lowest = TRUE,right = FALSE)))
 # O valor de include.lowest é definido como FALSE, o que significa que o limite inferior do primeiro intervalo não é incluído.
 print(intervalos)
 # Calculando a frequência absoluta:
-intervalos <- cut(mpg, breaks = num_intervalos, include.lowest = TRUE,right = FALSE)
 frequencia_absoluta <- as.numeric(table(intervalos))
+print(frequencia_absoluta)
 # Calculando frequência relativa:
 freq_relativa = prop.table(frequencia_absoluta)
 print(freq_relativa)
