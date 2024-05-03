@@ -64,7 +64,7 @@ print(amplitude_classe)
 # Verificação da distribuição dos valores sem os invervalos:
 summary(factor(mpg_matrix))
 # Dividindo os intervalos:
-intervalos <- cut(mpg, breaks = num_intervalos, include.lowest = TRUE,right = FALSE)
+intervalos <- cut(mpg_matrix, breaks = num_intervalos, include.lowest = TRUE,right = FALSE)
 print(summary(intervalos))
 intervalos <- names(table(cut(mpg_matrix, breaks = num_intervalos, include.lowest = TRUE,right = FALSE)))
 # O valor de include.lowest é definido como FALSE, o que significa que o limite inferior do primeiro intervalo não é incluído.
